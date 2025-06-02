@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { X } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -11,15 +12,24 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   const [phone, setPhone] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const { t } = useLanguage();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
+    const BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
+    const CHAT_ID = import.meta.env.VITE_TELEGRAM_CHAT_ID;
+
+    if (!BOT_TOKEN || !CHAT_ID) {
+      console.error("Telegram Bot Token or Chat ID is not configured.");
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
-      const BOT_TOKEN = '8099685781:AAGFhSLqvT5L5DPTKzqWkxx9c9KrItlrbAo';
-      const CHAT_ID = '9776992'; // Replace with your actual chat ID
       const message = `New Contact Request:\nName: ${name}\nPhone: ${phone}`;
       
       const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
@@ -42,9 +52,12 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
           setSubmitStatus('idle');
         }, 2000);
       } else {
+        const errorData = await response.json();
+        console.error('Telegram API error:', errorData);
         setSubmitStatus('error');
       }
     } catch (error) {
+      console.error('Failed to send contact request:', error);
       setSubmitStatus('error');
     }
 
@@ -54,45 +67,46 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
       <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose}></div>
       
-      <div className="relative glass rounded-2xl p-6 w-full max-w-md mx-4">
+      <div className="relative glass rounded-2xl p-6 w-full max-w-md">
         <button 
           onClick={onClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-white transition-colors"
+          className="absolute top-4 right-4 text-themed-muted hover:text-themed-foreground transition-colors"
+          aria-label={t('closeModal')}
         >
           <X className="w-6 h-6" />
         </button>
 
-        <h3 className="text-2xl font-bold mb-6">Свяжитесь с нами</h3>
+        <h3 className="text-2xl font-bold mb-6 text-themed-foreground">{t('contactModalTitle')}</h3>
         
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-1">
-              ФИО
+            <label htmlFor="name" className="label-themed">
+              {t('contactModalNameLabel')}
             </label>
             <input
               type="text"
               id="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="Введите ваше ФИО"
+              className="input-themed"
+              placeholder={t('contactModalNamePlaceholder')}
               required
             />
           </div>
           
           <div>
-            <label htmlFor="phone" className="block text-sm font-medium text-gray-300 mb-1">
-              Номер телефона
+            <label htmlFor="phone" className="label-themed">
+              {t('contactModalPhoneLabel')}
             </label>
             <input
               type="tel"
               id="phone"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              className="w-full px-4 py-2 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="input-themed"
               placeholder="+998 __ ___ __ __"
               required
             />
@@ -103,19 +117,20 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
             disabled={isSubmitting}
             className={`w-full btn ${
               submitStatus === 'success'
-                ? 'bg-green-600 hover:bg-green-700'
+                ? 'bg-green-600 hover:bg-green-700 text-white'
                 : submitStatus === 'error'
-                ? 'bg-red-600 hover:bg-red-700'
+                ? 'bg-red-600 hover:bg-red-700 text-white'
                 : 'btn-primary'
             }`}
+            aria-live="polite"
           >
             {isSubmitting
-              ? 'Отправка...'
+              ? t('contactModalSubmitting')
               : submitStatus === 'success'
-              ? 'Отправлено!'
+              ? t('contactModalSuccess')
               : submitStatus === 'error'
-              ? 'Ошибка! Попробуйте снова'
-              : 'Отправить'}
+              ? t('contactModalError')
+              : t('contactModalSubmit')}
           </button>
         </form>
       </div>

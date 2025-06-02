@@ -1,11 +1,10 @@
-
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import { translations, Language, TranslationKey } from '../locales/translations';
 
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: TranslationKey) => string;
+  t: (key: TranslationKey, replacements?: Record<string, string | number>) => string;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -20,17 +19,34 @@ export const useLanguage = () => {
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [language, setLanguage] = useState<Language>(() => {
-    const saved = localStorage.getItem('language');
-    return (saved as Language) || 'ru';
+    const savedLang = localStorage.getItem('language') as Language | null;
+    if (savedLang && translations[savedLang]) {
+      return savedLang;
+    }
+    const browserLang = navigator.language.split('-')[0] as Language;
+    if (translations[browserLang]) {
+      return browserLang;
+    }
+    return 'ru';
   });
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
 
   const handleSetLanguage = (lang: Language) => {
     setLanguage(lang);
     localStorage.setItem('language', lang);
   };
 
-  const t = (key: TranslationKey): string => {
-    return translations[language][key] || translations.ru[key] || key;
+  const t = (key: TranslationKey, replacements?: Record<string, string | number>): string => {
+    let translation = translations[language]?.[key] || translations.ru[key] || String(key);
+    if (replacements) {
+      Object.keys(replacements).forEach(placeholder => {
+        translation = translation.replace(new RegExp(`{{${placeholder}}}`, 'g'), String(replacements[placeholder]));
+      });
+    }
+    return translation;
   };
 
   return (
@@ -39,4 +55,3 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     </LanguageContext.Provider>
   );
 };
-</LanguageProvider>

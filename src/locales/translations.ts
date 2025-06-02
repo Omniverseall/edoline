@@ -1,75 +1,174 @@
-
 export const translations = {
   ru: {
+    // General
+    logoAlt: "Логотип EdoLine",
+    closeModal: "Закрыть модальное окно",
+    openMenuAria: "Открыть меню",
+    closeMenuAria: "Закрыть меню",
+    heroCTA: "Узнать больше",
+
     // Навигация
     features: "Возможности",
-    solutions: "Решения", 
+    solutions: "Решения",
     processes: "Процессы",
     security: "Безопасность",
     contacts: "Контакты",
-    
+
     // Hero секция
     heroTitle: "EdoLine - Платформа электронного документооборота",
     heroSubtitle: "Система ЭДО для управления документами, исполнением и оптимизации бизнес-процессов.",
     heroDescription: "Комплексное решение для внутреннего документооборота",
-    
+
     documentManagement: "Управление документами",
     documentManagementDesc: "Создавайте, редактируйте, храните и архивируйте все документы",
-    
+
     approvalRoutes: "Маршруты согласования",
     approvalRoutesDesc: "Упростите процессы согласования с электронными подписями",
-    
-    executionControl: "Контроль исполнения", 
+
+    executionControl: "Контроль исполнения",
     executionControlDesc: "Отслеживайте состояние документов и сроки исполнения",
-    
-    // Голосование и согласование
+
+    // DocumentManagement Section
+    docMgmtSubtitle: "Возможности системы",
+    docMgmtTitle: "Комплексное решение для ЭДО",
+    docMgmtDescription: "EdoLine предоставляет полный набор инструментов для эффективного управления всеми аспектами документооборота в вашей организации.",
+    docMgmtFeature1Title: "Управление документами",
+    docMgmtFeature1Desc: "Создавайте, редактируйте, храните и архивируйте все ваши документы в одном месте.",
+    docMgmtFeature2Title: "Маршруты согласования",
+    docMgmtFeature2Desc: "Упростите процессы согласования и утверждения документов, используя электронные подписи.",
+    docMgmtFeature3Title: "Контроль исполнения",
+    docMgmtFeature3Desc: "Отслеживайте состояние документов, сроки исполнения задач и контролируйте выполнение обязательств.",
+    docMgmtFeature4Title: "Общение и сотрудничество",
+    docMgmtFeature4Desc: "Обсуждайте документы, оставляйте комментарии и взаимодействуйте с коллегами в режиме реального времени.",
+    docMgmtFeature5Title: "Организационная структура",
+    docMgmtFeature5Desc: "Настройте иерархию: правление, комитеты, руководители и сотрудники с разными правами доступа.",
+    docMgmtFeature6Title: "Безопасность данных",
+    docMgmtFeature6Desc: "Защита документов от несанкционированного доступа с помощью современных технологий шифрования.",
+
+    // Голосование и согласование (FeatureSection 1)
     votingTitle: "Голосование и согласование документов",
     votingSubtitle: "Простые решения",
     votingDescription: "Система EdoLine предоставляет удобные инструменты для голосования и согласования документов, делая процесс принятия решений более эффективным и прозрачным.",
-    
     transparentPath: "Прозрачный путь документа через все стадии согласования",
     mobileVoting: "Возможность голосовать и комментировать с мобильных устройств",
     speedUp: "Ускорение процесса принятия решений",
     notifications: "Автоматические уведомления и напоминания",
-    
-    // Адаптация
+
+    // Адаптация (FeatureSection 2)
     adaptationTitle: "Адаптация под ваши потребности",
     adaptationSubtitle: "Индивидуальный подход",
     adaptationDescription: "Платформа EdoLine легко адаптируется под специфические потребности вашей организации, обеспечивая максимальную эффективность документооборота.",
-    
     customization: "Кастомизация под корпоративный стиль компании",
     documentTypes: "Настройка типов документов и маршрутов согласования",
     training: "Обучение сотрудников работе с системой",
     support: "Техническая поддержка на всех этапах внедрения",
+
+    // Electronic Signature Section
+    eSignSubtitle: "Электронная подпись EIMZO",
+    eSignTitle: "Безопасное подтверждение документов",
+    eSignDescription: "Система EdoLine интегрирована с национальной системой электронной подписи EIMZO, что обеспечивает юридическую значимость всех документов и соответствие требованиям законодательства.",
+    eSignFeature1Title: "Безопасность",
+    eSignFeature1Desc: "Защитите ваши документы от несанкционированного доступа и изменений.",
+    eSignFeature2Title: "Юридическая сила",
+    eSignFeature2Desc: "Обеспечьте юридическую силу вашим документам, используя ЭП.",
+    eSignFeature3Title: "Достоверность",
+    eSignFeature3Desc: "Проверьте подлинность документов и убедитесь в их аутентичности.",
+    eSignFeature4Title: "QR Code",
+    eSignFeature4Desc: "Уникальный код для быстрой проверки подписи или документа.",
+    eSignTabSign: "Подписание",
+    eSignTabVerify: "Проверка",
+    eSignTabHistory: "История",
+    eSignTabSignTitle: "Подписание документа",
+    eSignTabSignDesc: "Выберите документ и подпишите его с помощью вашей ЭЦП.",
+    eSignTabVerifyTitle: "Проверка подписи",
+    eSignTabVerifyDesc: "Загрузите документ для проверки электронной подписи.",
+    eSignTabHistoryTitle: "История подписей",
+    eSignTabHistoryDesc: "Просмотрите историю всех подписанных документов.",
+
+    // Workflow Section
+    workflowSectionSubtitle: "Управление процессами",
+    workflowSectionTitle: "Динамическое управление документооборотом",
+    workflowSectionDescription: "Настраивайте и оптимизируйте бизнес-процессы вашей организации с помощью гибких инструментов EdoLine.",
+    workflowVoteTitle: "Голосование и согласование",
+    workflowVoteFeat1Title: "Прозрачность",
+    workflowVoteFeat1Desc: "Проследите путь документа через все стадии согласования.",
+    workflowVoteFeat2Title: "Удобство",
+    workflowVoteFeat2Desc: "Голосуйте и комментируйте с мобильных устройств.",
+    workflowVoteFeat3Title: "Эффективность",
+    workflowVoteFeat3Desc: "Ускорьте принятие решений и сократите время согласования.",
+    workflowDynDocTitle: "Динамические типы документов",
+    workflowDynDocFeat1Title: "Гибкость",
+    workflowDynDocFeat1Desc: "Создавайте новые типы документов и настраивайте маршруты.",
+    workflowDynDocFeat2Title: "Эффективность",
+    workflowDynDocFeat2Desc: "Устраните ручное создание маршрутов, оптимизируйте процессы.",
+    workflowDynDocFeat3Title: "Адаптация",
+    workflowDynDocFeat3Desc: "Легко адаптируйте систему к изменениям в бизнес-процессах.",
+    workflowHRTitle: "Циклы HR документооборота",
+    workflowHRFeat1Title: "Кадровые документы",
+    workflowHRFeat1Desc: "Оформление, контракты, приказы, перемещения.",
+    workflowHRFeat2Title: "Карточка сотрудника",
+    workflowHRFeat2Desc: "Образование, опыт работы и другие данные.",
+    workflowHRFeat3Title: "Оценки и повышение",
+    workflowHRFeat3Desc: "Документы по оценке, повышению квалификации.",
+    workflowHRFeat4Title: "Увольнение",
+    workflowHRFeat4Desc: "Документы, связанные с увольнением сотрудников.",
+    workflowControlTitle: "Контроль и база знаний",
+    workflowControlFeat1Title: "Контроль исполнения",
+    workflowControlFeat1Desc: "Следите за сроками, получайте уведомления о дедлайнах.",
+    workflowControlFeat2Title: "Обсуждение документов",
+    workflowControlFeat2Desc: "Общайтесь, комментируйте прямо в контексте документа.",
+    workflowControlFeat3Title: "База знаний",
+    workflowControlFeat3Desc: "Создайте репозиторий документов и шаблонов.",
+
+    // Безопасность (Security Section)
+    securitySectionMainTitle: "Гибкие опции размещения и надежная защита",
+    securitySectionMainDesc: "EdoLine предлагает различные варианты развертывания системы, обеспечивая максимальную безопасность, контроль и соответствие вашим требованиям.",
     
-    // Безопасность
-    securityTitle: "Локальное размещение на сервере заказчика",
-    securitySubtitle: "Безопасность данных",
-    securityDescription: "Обеспечьте максимальную безопасность и конфиденциальность ваших данных с помощью локального размещения системы EdoLine.",
-    
-    confidentiality: "Конфиденциальность",
-    confidentialityDesc: "Обеспечьте безопасность вашей информации благодаря размещению системы на ваших серверах.",
-    
-    control: "Контроль",
-    controlDesc: "Полный контроль доступа к документам и данным. Настройте права для каждого пользователя.",
-    
-    compliance: "Соответствие",
-    complianceDesc: "Соблюдение требований законодательства о защите данных и информационной безопасности.",
-    
-    administration: "Администрирование",
-    administrationDesc: "Удобное и простое локальное администрирование платформы с полным доступом к настройкам.",
-    
+    securityBenefitConfidentialityTitle: "Конфиденциальность",
+    securityBenefitConfidentialityDesc: "Обеспечьте безопасность вашей информации благодаря размещению системы на ваших серверах.",
+    securityBenefitControlTitle: "Контроль",
+    securityBenefitControlDesc: "Полный контроль доступа к документам и данным. Настройте права для каждого пользователя.",
+    securityBenefitComplianceTitle: "Соответствие",
+    securityBenefitComplianceDesc: "Соблюдение требований законодательства о защите данных и информационной безопасности.",
+    securityBenefitAdminTitle: "Администрирование",
+    securityBenefitAdminDesc: "Удобное и простое локальное администрирование платформы с полным доступом к настройкам.",
+
+    onPremiseDeploymentTitle: "На ваших серверах (On-Premise)",
+    onPremiseDeploymentDesc: "Полный контроль над данными и инфраструктурой. Идеально для организаций со строгими требованиями к безопасности и существующей ИТ-инфраструктурой.",
+    onPremiseFeature1: "Максимальная конфиденциальность данных.",
+    onPremiseFeature2: "Прямой контроль доступа и политик безопасности.",
+    onPremiseFeature3: "Интеграция с внутренними системами.",
+
+    cloudDeploymentTitle: "В защищенном дата-центре (Cloud)",
+    cloudDeploymentDesc: "Быстрое развертывание, масштабируемость и снижение затрат на ИТ-инфраструктуру. Мы обеспечиваем высокий уровень безопасности и доступности.",
+    cloudFeature1: "Высокая доступность и отказоустойчивость.",
+    cloudFeature2: "Регулярное резервное копирование и защита данных.",
+    cloudFeature3: "Профессиональное администрирование и поддержка.",
+
     turnkeyTitle: "Адаптация, внедрение и запуск под ключ",
     turnkeyDescription: "Мы предлагаем полный цикл внедрения системы EdoLine, включая настройку, обучение сотрудников и техническую поддержку.",
-    
     platformCustomization: "Платформа легко кастомизируется под стилистику Заказчика",
     documentConfiguration: "Изучаются и настраиваются необходимые типы документов с маршрутами согласований",
     employeeTraining: "Проводится обучение сотрудников Заказчика с видеоматериалами и туториалами",
     technicalSupport: "Запуск и техническое сопровождение в течение 3-х месяцев",
-    
+
     contactInfo: "Свяжитесь с нами для подробной информации",
     contactUs: "Связаться с нами",
-    
+    contactPhone: "+99897 431 14 05",
+    contactEmail: "spacenetdev@gmail.com",
+    contactAddress: "Узбекистан, г. Ташкент",
+    contactPerson: "Аброрхон Абидов, CEO",
+
+    // Contact Modal
+    contactModalTitle: "Свяжитесь с нами",
+    contactModalNameLabel: "ФИО",
+    contactModalNamePlaceholder: "Введите ваше ФИО",
+    contactModalPhoneLabel: "Номер телефона",
+    contactModalSubmitting: "Отправка...",
+    contactModalSuccess: "Отправлено!",
+    contactModalError: "Ошибка! Попробуйте снова",
+    contactModalSubmit: "Отправить",
+
     // Footer
     footerDescription: "Система электронного документооборота для управления документами и оптимизации бизнес-процессов.",
     navigation: "Навигация",
@@ -79,159 +178,353 @@ export const translations = {
     electronicSignature: "Электронная подпись",
     allRightsReserved: "Все права защищены."
   },
-  
+
   en: {
+    // General
+    logoAlt: "EdoLine Logo",
+    closeModal: "Close modal",
+    openMenuAria: "Open menu",
+    closeMenuAria: "Close menu",
+    heroCTA: "Learn More",
+
     // Navigation
     features: "Features",
     solutions: "Solutions",
-    processes: "Processes", 
+    processes: "Processes",
     security: "Security",
     contacts: "Contacts",
-    
+
     // Hero section
     heroTitle: "EdoLine - Electronic Document Management Platform",
-    heroSubtitle: "EDS system for document management, execution and business process optimization.",
+    heroSubtitle: "EDMS for document management, execution, and business process optimization.",
     heroDescription: "Comprehensive solution for internal document workflow",
-    
     documentManagement: "Document Management",
-    documentManagementDesc: "Create, edit, store and archive all documents",
-    
+    documentManagementDesc: "Create, edit, store, and archive all documents",
     approvalRoutes: "Approval Routes",
     approvalRoutesDesc: "Simplify approval processes with electronic signatures",
-    
     executionControl: "Execution Control",
     executionControlDesc: "Track document status and execution deadlines",
-    
-    // Voting and approval
+
+    // DocumentManagement Section
+    docMgmtSubtitle: "System Capabilities",
+    docMgmtTitle: "Comprehensive EDMS Solution",
+    docMgmtDescription: "EdoLine provides a full suite of tools for effectively managing all aspects of document flow in your organization.",
+    docMgmtFeature1Title: "Document Management",
+    docMgmtFeature1Desc: "Create, edit, store, and archive all your documents in one place.",
+    docMgmtFeature2Title: "Approval Workflows",
+    docMgmtFeature2Desc: "Simplify document approval and signing processes using electronic signatures.",
+    docMgmtFeature3Title: "Task Monitoring",
+    docMgmtFeature3Desc: "Track document statuses, task deadlines, and monitor obligation fulfillment.",
+    docMgmtFeature4Title: "Communication & Collaboration",
+    docMgmtFeature4Desc: "Discuss documents, leave comments, and interact with colleagues in real-time.",
+    docMgmtFeature5Title: "Organizational Structure",
+    docMgmtFeature5Desc: "Set up hierarchy: board, committees, managers, and employees with different access rights.",
+    docMgmtFeature6Title: "Data Security",
+    docMgmtFeature6Desc: "Protect documents from unauthorized access using modern encryption technologies.",
+
+    // Voting and approval (FeatureSection 1)
     votingTitle: "Document Voting and Approval",
     votingSubtitle: "Simple Solutions",
     votingDescription: "EdoLine system provides convenient tools for document voting and approval, making the decision-making process more efficient and transparent.",
-    
     transparentPath: "Transparent document path through all approval stages",
     mobileVoting: "Ability to vote and comment from mobile devices",
     speedUp: "Accelerated decision-making process",
     notifications: "Automatic notifications and reminders",
-    
-    // Adaptation
+
+    // Adaptation (FeatureSection 2)
     adaptationTitle: "Adaptation to Your Needs",
     adaptationSubtitle: "Individual Approach",
     adaptationDescription: "EdoLine platform easily adapts to the specific needs of your organization, ensuring maximum document workflow efficiency.",
-    
     customization: "Customization to corporate company style",
     documentTypes: "Setting up document types and approval routes",
     training: "Employee training on system operation",
     support: "Technical support at all implementation stages",
+
+    // Electronic Signature Section
+    eSignSubtitle: "EIMZO Electronic Signature",
+    eSignTitle: "Secure Document Confirmation",
+    eSignDescription: "EdoLine system is integrated with the EIMZO national electronic signature system, ensuring legal validity for all documents and compliance with legislation.",
+    eSignFeature1Title: "Security",
+    eSignFeature1Desc: "Protect your documents from unauthorized access and alterations.",
+    eSignFeature2Title: "Legal Validity",
+    eSignFeature2Desc: "Ensure legal force for your documents using digital signatures.",
+    eSignFeature3Title: "Authenticity",
+    eSignFeature3Desc: "Verify document genuineness and ensure their authenticity.",
+    eSignFeature4Title: "QR Code",
+    eSignFeature4Desc: "Unique code for quick signature or document verification.",
+    eSignTabSign: "Sign",
+    eSignTabVerify: "Verify",
+    eSignTabHistory: "History",
+    eSignTabSignTitle: "Sign Document",
+    eSignTabSignDesc: "Select a document and sign it using your digital signature.",
+    eSignTabVerifyTitle: "Verify Signature",
+    eSignTabVerifyDesc: "Upload a document to verify its electronic signature.",
+    eSignTabHistoryTitle: "Signature History",
+    eSignTabHistoryDesc: "View the history of all signed documents.",
+
+    // Workflow Section
+    workflowSectionSubtitle: "Process Management",
+    workflowSectionTitle: "Dynamic Document Workflow Management",
+    workflowSectionDescription: "Customize and optimize your organization's business processes with EdoLine's flexible tools.",
+    workflowVoteTitle: "Voting and Approval",
+    workflowVoteFeat1Title: "Transparency",
+    workflowVoteFeat1Desc: "Track the document's path through all approval stages.",
+    workflowVoteFeat2Title: "Convenience",
+    workflowVoteFeat2Desc: "Vote and comment from mobile devices.",
+    workflowVoteFeat3Title: "Efficiency",
+    workflowVoteFeat3Desc: "Speed up decision-making and reduce approval times.",
+    workflowDynDocTitle: "Dynamic Document Types",
+    workflowDynDocFeat1Title: "Flexibility",
+    workflowDynDocFeat1Desc: "Create new document types and configure their workflows.",
+    workflowDynDocFeat2Title: "Effectiveness",
+    workflowDynDocFeat2Desc: "Eliminate manual route creation, optimize processes.",
+    workflowDynDocFeat3Title: "Adaptation",
+    workflowDynDocFeat3Desc: "Easily adapt the system to changing business processes.",
+    workflowHRTitle: "HR Document Cycles",
+    workflowHRFeat1Title: "Personnel Documents",
+    workflowHRFeat1Desc: "Onboarding, contracts, orders, transfers.",
+    workflowHRFeat2Title: "Employee Card",
+    workflowHRFeat2Desc: "Education, work experience, and other data.",
+    workflowHRFeat3Title: "Appraisals & Promotions",
+    workflowHRFeat3Desc: "Documents for performance reviews, skill upgrades.",
+    workflowHRFeat4Title: "Termination",
+    workflowHRFeat4Desc: "Documents related to employee termination.",
+    workflowControlTitle: "Control and Knowledge Base",
+    workflowControlFeat1Title: "Execution Monitoring",
+    workflowControlFeat1Desc: "Track deadlines, get notifications for due dates.",
+    workflowControlFeat2Title: "Document Discussions",
+    workflowControlFeat2Desc: "Communicate, comment directly within the document context.",
+    workflowControlFeat3Title: "Knowledge Base",
+    workflowControlFeat3Desc: "Create a repository of documents and templates.",
+
+    // Security (Security Section)
+    securitySectionMainTitle: "Flexible Deployment Options & Robust Security",
+    securitySectionMainDesc: "EdoLine offers various system deployment options, ensuring maximum security, control, and compliance with your requirements.",
+
+    securityBenefitConfidentialityTitle: "Confidentiality",
+    securityBenefitConfidentialityDesc: "Ensure the security of your information by deploying the system on your servers.",
+    securityBenefitControlTitle: "Control",
+    securityBenefitControlDesc: "Full control over access to documents and data. Configure rights for each user.",
+    securityBenefitComplianceTitle: "Compliance",
+    securityBenefitComplianceDesc: "Adherence to data protection and information security legislation.",
+    securityBenefitAdminTitle: "Administration",
+    securityBenefitAdminDesc: "Convenient and simple local platform administration with full access to settings.",
     
-    // Security
-    securityTitle: "Local Deployment on Customer Server",
-    securitySubtitle: "Data Security",
-    securityDescription: "Ensure maximum security and confidentiality of your data with local deployment of EdoLine system.",
-    
-    confidentiality: "Confidentiality",
-    confidentialityDesc: "Ensure the security of your information by deploying the system on your servers.",
-    
-    control: "Control",
-    controlDesc: "Full control over access to documents and data. Configure rights for each user.",
-    
-    compliance: "Compliance",
-    complianceDesc: "Compliance with data protection and information security legislation requirements.",
-    
-    administration: "Administration",
-    administrationDesc: "Convenient and simple local platform administration with full access to settings.",
-    
-    turnkeyTitle: "Adaptation, Implementation and Turnkey Launch",
-    turnkeyDescription: "We offer a full cycle of EdoLine system implementation, including setup, employee training and technical support.",
-    
-    platformCustomization: "Platform easily customizes to Customer's style",
-    documentConfiguration: "Necessary document types with approval routes are studied and configured",
-    employeeTraining: "Customer employees training is conducted with video materials and tutorials",
+    onPremiseDeploymentTitle: "On Your Servers (On-Premise)",
+    onPremiseDeploymentDesc: "Full control over data and infrastructure. Ideal for organizations with strict security requirements and existing IT infrastructure.",
+    onPremiseFeature1: "Maximum data confidentiality.",
+    onPremiseFeature2: "Direct control over access and security policies.",
+    onPremiseFeature3: "Integration with internal systems.",
+
+    cloudDeploymentTitle: "In Secure Data Center (Cloud)",
+    cloudDeploymentDesc: "Rapid deployment, scalability, and reduced IT infrastructure costs. We ensure high security and availability.",
+    cloudFeature1: "High availability and fault tolerance.",
+    cloudFeature2: "Regular backups and data protection.",
+    cloudFeature3: "Professional administration and support.",
+
+    turnkeyTitle: "Turnkey Adaptation, Implementation, and Launch",
+    turnkeyDescription: "We offer a full cycle of EdoLine system implementation, including setup, employee training, and technical support.",
+    platformCustomization: "The platform is easily customized to the Customer's branding",
+    documentConfiguration: "Necessary document types and approval routes are studied and configured",
+    employeeTraining: "Customer's employees are trained using video materials and tutorials",
     technicalSupport: "Launch and technical support for 3 months",
-    
+
     contactInfo: "Contact us for detailed information",
     contactUs: "Contact Us",
-    
+    contactPhone: "+99897 431 14 05",
+    contactEmail: "spacenetdev@gmail.com",
+    contactAddress: "Uzbekistan, Tashkent city",
+    contactPerson: "Abrorkhon Abidov, CEO",
+
+    // Contact Modal
+    contactModalTitle: "Contact Us",
+    contactModalNameLabel: "Full Name",
+    contactModalNamePlaceholder: "Enter your full name",
+    contactModalPhoneLabel: "Phone Number",
+    contactModalSubmitting: "Sending...",
+    contactModalSuccess: "Sent!",
+    contactModalError: "Error! Please try again",
+    contactModalSubmit: "Send",
+
     // Footer
     footerDescription: "Electronic document management system for document management and business process optimization.",
     navigation: "Navigation",
     home: "Home",
     hrDocuments: "HR Documents",
-    knowledgeBase: "Knowledge Base", 
+    knowledgeBase: "Knowledge Base",
     electronicSignature: "Electronic Signature",
     allRightsReserved: "All rights reserved."
   },
-  
+
   uz: {
+    // General
+    logoAlt: "EdoLine Logotipi",
+    closeModal: "Modalni yopish",
+    openMenuAria: "Menyuni ochish",
+    closeMenuAria: "Menyuni yopish",
+    heroCTA: "Batafsil",
+
     // Navigation
     features: "Imkoniyatlar",
     solutions: "Yechimlar",
     processes: "Jarayonlar",
-    security: "Xavfsizlik", 
-    contacts: "Kontaktlar",
-    
+    security: "Xavfsizlik",
+    contacts: "Aloqa",
+
     // Hero section
-    heroTitle: "EdoLine - Elektron hujjat aylanishi platformasi",
-    heroSubtitle: "Hujjatlarni boshqarish, ijro etish va biznes jarayonlarni optimallashtirish uchun EDS tizimi.",
+    heroTitle: "EdoLine - Elektron hujjat aylanish platformasi",
+    heroSubtitle: "Hujjatlarni boshqarish, ijro etish va biznes jarayonlarni optimallashtirish uchun EHA tizimi.",
     heroDescription: "Ichki hujjat aylanishi uchun kompleks yechim",
-    
     documentManagement: "Hujjatlarni boshqarish",
     documentManagementDesc: "Barcha hujjatlarni yarating, tahrirlang, saqlang va arxivlang",
-    
-    approvalRoutes: "Tasdiqlash yo'llari",
-    approvalRoutesDesc: "Elektron imzolar bilan tasdiqlash jarayonlarini soddalashtiring",
-    
+    approvalRoutes: "Kelishuv yo'nalishlari",
+    approvalRoutesDesc: "Elektron imzolar bilan kelishuv jarayonlarini soddalashtiring",
     executionControl: "Ijro nazorati",
     executionControlDesc: "Hujjat holati va ijro muddatlarini kuzatib boring",
-    
-    // Voting and approval
-    votingTitle: "Hujjatlar bo'yicha ovoz berish va tasdiqlash",
+
+    // DocumentManagement Section
+    docMgmtSubtitle: "Tizim imkoniyatlari",
+    docMgmtTitle: "EHA uchun kompleks yechim",
+    docMgmtDescription: "EdoLine tashkilotingizdagi hujjat aylanishining barcha jihatlarini samarali boshqarish uchun to'liq vositalar to'plamini taqdim etadi.",
+    docMgmtFeature1Title: "Hujjatlarni boshqarish",
+    docMgmtFeature1Desc: "Barcha hujjatlaringizni bir joyda yarating, tahrirlang, saqlang va arxivlang.",
+    docMgmtFeature2Title: "Kelishuv marshrutlari",
+    docMgmtFeature2Desc: "Elektron imzolar yordamida hujjatlarni tasdiqlash jarayonlarini soddalashtiring.",
+    docMgmtFeature3Title: "Ijro nazorati",
+    docMgmtFeature3Desc: "Hujjatlar holatini, vazifalar muddatlarini kuzating va majburiyatlar bajarilishini nazorat qiling.",
+    docMgmtFeature4Title: "Muloqot va hamkorlik",
+    docMgmtFeature4Desc: "Hujjatlarni muhokama qiling, izohlar qoldiring va hamkasblar bilan real vaqtda hamkorlik qiling.",
+    docMgmtFeature5Title: "Tashkiliy tuzilma",
+    docMgmtFeature5Desc: "Iyerarxiyani sozlang: boshqaruv, qo'mitalar, rahbarlar va turli kirish huquqlariga ega xodimlar.",
+    docMgmtFeature6Title: "Ma'lumotlar xavfsizligi",
+    docMgmtFeature6Desc: "Zamonaviy shifrlash texnologiyalari yordamida hujjatlarni ruxsatsiz kirishdan himoya qiling.",
+
+    // Voting and approval (FeatureSection 1)
+    votingTitle: "Hujjatlar bo'yicha ovoz berish va kelishish",
     votingSubtitle: "Oddiy yechimlar",
-    votingDescription: "EdoLine tizimi hujjatlar bo'yicha ovoz berish va tasdiqlash uchun qulay vositalarni taqdim etadi, qaror qabul qilish jarayonini yanada samarali va shaffof qiladi.",
-    
-    transparentPath: "Tasdiqlashning barcha bosqichlari orqali hujjatning shaffof yo'li",
+    votingDescription: "EdoLine tizimi hujjatlar bo'yicha ovoz berish va kelishish uchun qulay vositalarni taqdim etadi, qaror qabul qilish jarayonini yanada samarali va shaffof qiladi.",
+    transparentPath: "Hujjatning barcha kelishuv bosqichlaridan o'tishining shaffof yo'li",
     mobileVoting: "Mobil qurilmalardan ovoz berish va izoh qoldirish imkoniyati",
     speedUp: "Qaror qabul qilish jarayonini tezlashtirish",
     notifications: "Avtomatik bildirishnomalar va eslatmalar",
-    
-    // Adaptation
-    adaptationTitle: "Sizning ehtiyojlaringizga moslashuv",
+
+    // Adaptation (FeatureSection 2)
+    adaptationTitle: "Sizning ehtiyojlaringizga moslashish",
     adaptationSubtitle: "Individual yondashuv",
-    adaptationDescription: "EdoLine platformasi sizning tashkilotingizning o'ziga xos ehtiyojlariga oson moslashadi va hujjat aylanishining maksimal samaradorligini ta'minlaydi.",
-    
-    customization: "Kompaniya korporativ uslubiga moslashtirish",
-    documentTypes: "Hujjat turlari va tasdiqlash yo'llarini sozlash",
+    adaptationDescription: "EdoLine platformasi tashkilotingizning o'ziga xos ehtiyojlariga osonlikcha moslashadi va hujjat aylanishining maksimal samaradorligini ta'minlaydi.",
+    customization: "Kompaniyaning korporativ uslubiga moslashtirish",
+    documentTypes: "Hujjat turlari va kelishuv yo'nalishlarini sozlash",
     training: "Xodimlarni tizim bilan ishlashga o'rgatish",
     support: "Joriy etishning barcha bosqichlarida texnik yordam",
-    
-    // Security
-    securityTitle: "Mijoz serverida mahalliy joylashtirish",
-    securitySubtitle: "Ma'lumotlar xavfsizligi",
-    securityDescription: "EdoLine tizimini mahalliy joylashtirishda ma'lumotlaringizning maksimal xavfsizligi va maxfiyligini ta'minlang.",
-    
-    confidentiality: "Maxfiylik",
-    confidentialityDesc: "Tizimni o'z serverlaringizda joylashtirib, ma'lumotlaringiz xavfsizligini ta'minlang.",
-    
-    control: "Nazorat",
-    controlDesc: "Hujjatlar va ma'lumotlarga kirishni to'liq nazorat qilish. Har bir foydalanuvchi uchun huquqlarni sozlang.",
-    
-    compliance: "Muvofiqlik",
-    complianceDesc: "Ma'lumotlarni himoya qilish va axborot xavfsizligi qonunchiligi talablariga rioya qilish.",
-    
-    administration: "Boshqaruv",
-    administrationDesc: "Sozlamalarga to'liq kirish bilan qulay va oddiy mahalliy platforma boshqaruvi.",
-    
-    turnkeyTitle: "Moslashuv, joriy etish va kalitga tayyor ishga tushirish",
-    turnkeyDescription: "Biz sozlash, xodimlarni o'qitish va texnik yordam berish bilan birga EdoLine tizimini joriy etishning to'liq tsiklini taklif qilamiz.",
-    
-    platformCustomization: "Platforma mijozning uslubiga oson moslashadi",
-    documentConfiguration: "Zarur hujjat turlari tasdiqlash yo'llari bilan o'rganiladi va sozlanadi",
-    employeeTraining: "Mijoz xodimlari video materiallar va qo'llanmalar bilan o'qitiladi",
-    technicalSupport: "3 oy davomida ishga tushirish va texnik yordam",
-    
+
+    // Electronic Signature Section
+    eSignSubtitle: "EIMZO Elektron Imzo",
+    eSignTitle: "Hujjatlarni xavfsiz tasdiqlash",
+    eSignDescription: "EdoLine tizimi EIMZO milliy elektron imzo tizimi bilan integratsiyalashgan bo'lib, barcha hujjatlarning yuridik kuchga ega bo'lishini va qonunchilik talablariga muvofiqligini ta'minlaydi.",
+    eSignFeature1Title: "Xavfsizlik",
+    eSignFeature1Desc: "Hujjatlaringizni ruxsatsiz kirish va o'zgartirishlardan himoya qiling.",
+    eSignFeature2Title: "Yuridik kuch",
+    eSignFeature2Desc: "Raqamli imzolar yordamida hujjatlaringizning yuridik kuchini ta'minlang.",
+    eSignFeature3Title: "Haqiqiylik",
+    eSignFeature3Desc: "Hujjatlarning asl nusxaligini tekshiring va ularning haqiqiyligiga ishonch hosil qiling.",
+    eSignFeature4Title: "QR Kod",
+    eSignFeature4Desc: "Imzo yoki hujjatni tezkor tekshirish uchun noyob kod.",
+    eSignTabSign: "Imzolash",
+    eSignTabVerify: "Tekshirish",
+    eSignTabHistory: "Tarix",
+    eSignTabSignTitle: "Hujjatni imzolash",
+    eSignTabSignDesc: "Hujjatni tanlang va raqamli imzoingiz bilan imzolang.",
+    eSignTabVerifyTitle: "Imzoni tekshirish",
+    eSignTabVerifyDesc: "Elektron imzosini tekshirish uchun hujjatni yuklang.",
+    eSignTabHistoryTitle: "Imzolar tarixi",
+    eSignTabHistoryDesc: "Barcha imzolangan hujjatlar tarixini ko'rib chiqing.",
+
+    // Workflow Section
+    workflowSectionSubtitle: "Jarayonlarni boshqarish",
+    workflowSectionTitle: "Hujjat aylanishini dinamik boshqarish",
+    workflowSectionDescription: "EdoLine'ning moslashuvchan vositalari yordamida tashkilotingiz biznes jarayonlarini sozlang va optimallashtiring.",
+    workflowVoteTitle: "Ovoz berish va kelishish",
+    workflowVoteFeat1Title: "Shaffoflik",
+    workflowVoteFeat1Desc: "Hujjatning barcha kelishuv bosqichlaridan o'tish yo'lini kuzatib boring.",
+    workflowVoteFeat2Title: "Qulaylik",
+    workflowVoteFeat2Desc: "Mobil qurilmalardan ovoz bering va izoh qoldiring.",
+    workflowVoteFeat3Title: "Samaradorlik",
+    workflowVoteFeat3Desc: "Qaror qabul qilishni tezlashtiring va kelishuv vaqtini qisqartiring.",
+    workflowDynDocTitle: "Dinamik hujjat turlari",
+    workflowDynDocFeat1Title: "Moslashuvchanlik",
+    workflowDynDocFeat1Desc: "Yangi hujjat turlarini yarating va ularning marshrutlarini sozlang.",
+    workflowDynDocFeat2Title: "Natijadorlik",
+    workflowDynDocFeat2Desc: "Qo'lda marshrut yaratishni bartaraf eting, jarayonlarni optimallashtiring.",
+    workflowDynDocFeat3Title: "Adaptatsiya",
+    workflowDynDocFeat3Desc: "Tizimni o'zgaruvchan biznes jarayonlariga osonlikcha moslashtiring.",
+    workflowHRTitle: "HR hujjat aylanishi sikllari",
+    workflowHRFeat1Title: "Kadrlar hujjatlari",
+    workflowHRFeat1Desc: "Ishga qabul qilish, shartnomalar, buyruqlar, o'tkazmalar.",
+    workflowHRFeat2Title: "Xodim kartochkasi",
+    workflowHRFeat2Desc: "Ma'lumoti, ish tajribasi va boshqa ma'lumotlar.",
+    workflowHRFeat3Title: "Baholash va lavozim oshirish",
+    workflowHRFeat3Desc: "Ish faoliyatini baholash, malaka oshirish hujjatlari.",
+    workflowHRFeat4Title: "Ishdan bo'shatish",
+    workflowHRFeat4Desc: "Xodimlarni ishdan bo'shatish bilan bog'liq hujjatlar.",
+    workflowControlTitle: "Nazorat va bilimlar bazasi",
+    workflowControlFeat1Title: "Ijro nazorati",
+    workflowControlFeat1Desc: "Muddatlarni kuzatib boring, belgilangan vaqtlar haqida bildirishnomalar oling.",
+    workflowControlFeat2Title: "Hujjatlarni muhokama qilish",
+    workflowControlFeat2Desc: "To'g'ridan-to'g'ri hujjat kontekstida muloqot qiling, izoh qoldiring.",
+    workflowControlFeat3Title: "Bilimlar bazasi",
+    workflowControlFeat3Desc: "Hujjatlar va andozalar omborini yarating.",
+
+    // Xavfsizlik (Security Section)
+    securitySectionMainTitle: "Moslashuvchan Joylashtirish Variantlari va Ishonchli Himoya",
+    securitySectionMainDesc: "EdoLine tizimni joylashtirishning turli xil variantlarini taklif etadi, bu sizning talablaringizga muvofiq maksimal xavfsizlik, nazorat va muvofiqlikni ta'minlaydi.",
+
+    securityBenefitConfidentialityTitle: "Maxfiylik",
+    securityBenefitConfidentialityDesc: "Tizimni o'z serverlaringizda joylashtirib, ma'lumotlaringiz xavfsizligini ta'minlang.",
+    securityBenefitControlTitle: "Nazorat",
+    securityBenefitControlDesc: "Hujjatlar va ma'lumotlarga kirishni to'liq nazorat qilish. Har bir foydalanuvchi uchun huquqlarni sozlang.",
+    securityBenefitComplianceTitle: "Muvofiqlik",
+    securityBenefitComplianceDesc: "Ma'lumotlarni himoya qilish va axborot xavfsizligi bo'yicha qonunchilik talablariga rioya qilish.",
+    securityBenefitAdminTitle: "Boshqaruv",
+    securityBenefitAdminDesc: "Sozlamalarga to'liq kirish imkoniyati bilan qulay va oddiy mahalliy platforma boshqaruvi.",
+
+    onPremiseDeploymentTitle: "Sizning Serverlaringizda (On-Premise)",
+    onPremiseDeploymentDesc: "Ma'lumotlar va infratuzilma ustidan to'liq nazorat. Qattiq xavfsizlik talablari va mavjud IT-infratuzilmaga ega tashkilotlar uchun ideal.",
+    onPremiseFeature1: "Ma'lumotlarning maksimal maxfiyligi.",
+    onPremiseFeature2: "Kirish va xavfsizlik siyosatlari ustidan bevosita nazorat.",
+    onPremiseFeature3: "Ichki tizimlar bilan integratsiya.",
+
+    cloudDeploymentTitle: "Xavfsiz Ma'lumotlar Markazida (Cloud)",
+    cloudDeploymentDesc: "Tezkor joylashtirish, kengaytiriluvchanlik va IT-infratuzilma xarajatlarini kamaytirish. Biz yuqori darajadagi xavfsizlik va mavjudlikni ta'minlaymiz.",
+    cloudFeature1: "Yuqori darajada mavjudlik va nosozliklarga chidamlilik.",
+    cloudFeature2: "Muntazam zaxira nusxalash va ma'lumotlarni himoya qilish.",
+    cloudFeature3: "Professional boshqaruv va qo'llab-quvvatlash.",
+
+    turnkeyTitle: "Tayyor holda moslashtirish, joriy etish va ishga tushirish",
+    turnkeyDescription: "Biz EdoLine tizimini joriy etishning to'liq siklini taklif etamiz, shu jumladan sozlash, xodimlarni o'qitish va texnik yordam.",
+    platformCustomization: "Platforma Buyurtmachining uslubiga osongina moslashtiriladi",
+    documentConfiguration: "Kerakli hujjat turlari va kelishuv yo'nalishlari o'rganiladi va sozlanadi",
+    employeeTraining: "Buyurtmachi xodimlari video materiallar va qo'llanmalar yordamida o'qitiladi",
+    technicalSupport: "3 oy davomida ishga tushirish va texnik qo'llab-quvvatlash",
+
     contactInfo: "Batafsil ma'lumot uchun biz bilan bog'laning",
     contactUs: "Biz bilan bog'lanish",
-    
+    contactPhone: "+99897 431 14 05",
+    contactEmail: "spacenetdev@gmail.com",
+    contactAddress: "O'zbekiston, Toshkent sh.",
+    contactPerson: "Abrorxon Abidov, CEO",
+
+    // Contact Modal
+    contactModalTitle: "Biz bilan bog'laning",
+    contactModalNameLabel: "To'liq ism",
+    contactModalNamePlaceholder: "To'liq ismingizni kiriting",
+    contactModalPhoneLabel: "Telefon raqami",
+    contactModalSubmitting: "Yuborilmoqda...",
+    contactModalSuccess: "Yuborildi!",
+    contactModalError: "Xatolik! Qaytadan urinib ko'ring",
+    contactModalSubmit: "Yuborish",
+
     // Footer
-    footerDescription: "Hujjatlarni boshqarish va biznes jarayonlarni optimallashtirish uchun elektron hujjat aylanishi tizimi.",
+    footerDescription: "Hujjatlarni boshqarish va biznes jarayonlarni optimallashtirish uchun elektron hujjat aylanish tizimi.",
     navigation: "Navigatsiya",
     home: "Bosh sahifa",
     hrDocuments: "HR hujjatlari",

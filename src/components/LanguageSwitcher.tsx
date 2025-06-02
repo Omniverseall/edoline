@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Globe } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -20,15 +19,19 @@ const LanguageSwitcher: React.FC = () => {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 p-2 rounded-lg glass hover:bg-white/20 transition-colors"
+        className="flex items-center space-x-2 p-2 rounded-lg glass hover:bg-white/20 dark:hover:bg-white/10 light:hover:bg-black/5 transition-colors"
         aria-label="Change language"
       >
-        <Globe className="w-5 h-5" />
-        <span className="text-sm font-medium">{currentLanguage?.flag}</span>
+        <Globe className="w-5 h-5 text-themed-foreground" />
+        <span className="text-sm font-medium text-themed-foreground">{currentLanguage?.flag}</span>
       </button>
 
       {isOpen && (
-        <div className="absolute top-full right-0 mt-2 w-48 bg-slate-800/95 backdrop-blur-md border border-white/10 rounded-lg shadow-lg z-50">
+        <div 
+        className="absolute top-full right-0 mt-2 w-40 sm:w-48 rounded-lg shadow-xl z-50 
+                   bg-themed-surface border border-themed-custom glass overflow-hidden"
+        onMouseLeave={() => setIsOpen(false)} // Закрывать при уводе мыши
+        >
           {languages.map((lang) => (
             <button
               key={lang.code}
@@ -36,12 +39,13 @@ const LanguageSwitcher: React.FC = () => {
                 setLanguage(lang.code);
                 setIsOpen(false);
               }}
-              className={`w-full flex items-center space-x-3 px-4 py-2 text-left hover:bg-white/10 transition-colors first:rounded-t-lg last:rounded-b-lg ${
-                language === lang.code ? 'bg-white/5' : ''
-              }`}
+              className={`w-full flex items-center space-x-3 px-4 py-3 text-left 
+                         hover:bg-blue-500/10 dark:hover:bg-blue-400/20 light:hover:bg-blue-500/10
+                         transition-colors duration-150
+                         ${language === lang.code ? 'bg-blue-500/20 dark:bg-blue-400/30 light:bg-blue-500/20' : ''}`}
             >
               <span className="text-lg">{lang.flag}</span>
-              <span className="text-sm text-white">{lang.name}</span>
+              <span className="text-sm text-themed-foreground">{lang.name}</span>
             </button>
           ))}
         </div>
