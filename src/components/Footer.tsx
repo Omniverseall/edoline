@@ -6,13 +6,13 @@ import { TranslationKey } from '../locales/translations';
 const Footer: React.FC = () => {
   const { t } = useLanguage();
 
-  const navLinks: {key: TranslationKey, href: string}[] = [
-    { key: 'home', href: '#' },
-    { key: 'features', href: '#features-section' },
-    { key: 'solutions', href: '#solutions-section' },
-    { key: 'processes', href: '#processes-section' },
-    { key: 'security', href: '#security-section' },
-    { key: 'contacts', href: '#contact-section' }
+  const navLinks: {key: TranslationKey}[] = [
+    { key: 'home' },
+    { key: 'features' },
+    { key: 'solutions' },
+    { key: 'processes' },
+    { key: 'security' },
+    { key: 'contacts' }
   ];
 
   const featureLinks: {key: TranslationKey}[] = [
@@ -45,9 +45,9 @@ const Footer: React.FC = () => {
             <ul className="space-y-2 sm:space-y-3">
               {navLinks.map((item) => (
                 <li key={item.key}>
-                  <a href={item.href} className="text-themed-muted hover:text-blue-500 dark:hover:text-blue-400 transition-colors text-sm sm:text-base">
+                  <span className="text-themed-muted text-sm sm:text-base">
                     {t(item.key)}
-                  </a>
+                  </span>
                 </li>
               ))}
             </ul>
@@ -58,9 +58,9 @@ const Footer: React.FC = () => {
             <ul className="space-y-2 sm:space-y-3">
               {featureLinks.map((item) => (
                 <li key={item.key}>
-                  <a href="#" className="text-themed-muted hover:text-blue-500 dark:hover:text-blue-400 transition-colors text-sm sm:text-base">
+                  <span className="text-themed-muted text-sm sm:text-base">
                     {t(item.key)}
-                  </a>
+                  </span>
                 </li>
               ))}
             </ul>

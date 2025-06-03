@@ -5,9 +5,10 @@ import { useLanguage } from '../contexts/LanguageContext';
 interface ContactModalProps {
   isOpen: boolean;
   onClose: () => void;
+  tariff?: string | null;
 }
 
-const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
+const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, tariff }) => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -30,7 +31,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     }
 
     try {
-      const message = `New Contact Request:\nName: ${name}\nPhone: ${phone}`;
+      const message = `New Contact Request:\nName: ${name}\nPhone: ${phone}${tariff ? `\nTariff: ${tariff}` : ''}`;
       
       const response = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
         method: 'POST',
@@ -80,6 +81,11 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         </button>
 
         <h3 className="text-2xl font-bold mb-6 text-themed-foreground">{t('contactModalTitle')}</h3>
+        {tariff && (
+          <div className="mb-4 text-themed-muted text-center">
+            <span className="font-semibold">Тариф: </span>{tariff}
+          </div>
+        )}
         
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>

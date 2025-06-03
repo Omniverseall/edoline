@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <div className="flex justify-center mb-6 sm:mb-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-              <img src={logoSrc} alt={t('logoAlt')} className="h-20 w-20 sm:h-28 sm:w-28 md:h-36 md:w-36" />
+              <img src={logoSrc} alt={t('logoAlt')} className="h-10 sm:h-[200px] md:h-[200px] object-contain" />
             </div>
 
             <h1 className="mb-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>

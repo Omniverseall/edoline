@@ -1,5 +1,26 @@
 export const translations = {
   ru: {
+    // Pricing Section
+    pricingTitle: "Тарифы и стоимость",
+    pricingSubtitle: "Выберите подходящий тариф для вашей компании. Все цены указаны в UZS/мес.",
+    tariff: "Тариф",
+    activeUsers: "Кол-во активных пользователей",
+    price: "Цена (UZS/мес)",
+    tariffStart: "Start",
+    tariffTeam: "Team",
+    tariffPro: "Pro",
+    tariffEnterprise: "Enterprise",
+    tariffCorporate: "Corporate",
+    tariffUsers5: "до 5",
+    tariffUsers20: "до 20",
+    tariffUsers50: "до 50",
+    tariffUsers100: "до 100",
+    tariffUsers100plus: "100+",
+    tariffPriceStart: "100,000",
+    tariffPriceTeam: "300,000",
+    tariffPricePro: "700,000",
+    tariffPriceEnterprise: "1,200,000",
+    tariffPriceCorporate: "Индивидуально",
     // General
     logoAlt: "Логотип EdoLine",
     closeModal: "Закрыть модальное окно",
@@ -12,6 +33,7 @@ export const translations = {
     solutions: "Решения",
     processes: "Процессы",
     security: "Безопасность",
+    pricing: "Тарифы и услуги", // Добавляем новый ключ для навигации
     contacts: "Контакты",
 
     // Hero секция
@@ -180,6 +202,27 @@ export const translations = {
   },
 
   en: {
+    // Pricing Section
+    pricingTitle: "Pricing & Plans",
+    pricingSubtitle: "Choose the best plan for your company. All prices are per month in UZS.",
+    tariff: "Plan",
+    activeUsers: "Active users",
+    price: "Price (UZS/mo)",
+    tariffStart: "Start",
+    tariffTeam: "Team",
+    tariffPro: "Pro",
+    tariffEnterprise: "Enterprise",
+    tariffCorporate: "Corporate",
+    tariffUsers5: "up to 5",
+    tariffUsers20: "up to 20",
+    tariffUsers50: "up to 50",
+    tariffUsers100: "up to 100",
+    tariffUsers100plus: "100+",
+    tariffPriceStart: "100,000",
+    tariffPriceTeam: "300,000",
+    tariffPricePro: "700,000",
+    tariffPriceEnterprise: "1,200,000",
+    tariffPriceCorporate: "Custom",
     // General
     logoAlt: "EdoLine Logo",
     closeModal: "Close modal",
@@ -357,6 +400,27 @@ export const translations = {
   },
 
   uz: {
+    // Pricing Section
+    pricingTitle: "Tariflar va narxlar",
+    pricingSubtitle: "Kompaniyangiz uchun mos tarifni tanlang. Barcha narxlar UZS/oy ko'rsatilgan.",
+    tariff: "Tarif",
+    activeUsers: "Faol foydalanuvchilar soni",
+    price: "Narxi (UZS/oy)",
+    tariffStart: "Start",
+    tariffTeam: "Team",
+    tariffPro: "Pro",
+    tariffEnterprise: "Enterprise",
+    tariffCorporate: "Corporate",
+    tariffUsers5: "5 tagacha",
+    tariffUsers20: "20 tagacha",
+    tariffUsers50: "50 tagacha",
+    tariffUsers100: "100 tagacha",
+    tariffUsers100plus: "100+",
+    tariffPriceStart: "100,000",
+    tariffPriceTeam: "300,000",
+    tariffPricePro: "700,000",
+    tariffPriceEnterprise: "1,200,000",
+    tariffPriceCorporate: "Individual",
     // General
     logoAlt: "EdoLine Logotipi",
     closeModal: "Modalni yopish",
@@ -369,6 +433,7 @@ export const translations = {
     solutions: "Yechimlar",
     processes: "Jarayonlar",
     security: "Xavfsizlik",
+    pricing: "Tariflar va xizmatlar", // Yangilangan kalit
     contacts: "Aloqa",
 
     // Hero section

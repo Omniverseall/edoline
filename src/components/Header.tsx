@@ -25,6 +25,7 @@ const Header: React.FC = () => {
     { key: 'solutions', href: '#solutions-section' },
     { key: 'processes', href: '#processes-section' },
     { key: 'security', href: '#security-section' },
+    { key: 'pricing', href: '#pricing-section' }, // Добавляем новую ссылку на секцию тарифов
     { key: 'contacts', href: '#contact-section' }
   ];
 
@@ -37,7 +38,7 @@ const Header: React.FC = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 md:h-20">
             <a href="#" aria-label="EdoLine Home" className="flex items-center space-x-2">
-              <img src={logoSrc} alt={t('logoAlt')} className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14" />
+              <img src={logoSrc} alt={t('logoAlt')} className="h-10 sm:h-12 md:h-14 object-contain" />
               <span className="font-display text-xl sm:text-2xl font-semibold text-themed-foreground hidden xs:inline">EdoLine</span>
             </a>
 
