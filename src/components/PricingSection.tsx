@@ -20,31 +20,31 @@ const tariffs: Tariff[] = [
     nameKey: 'tariffStart',
     usersKey: 'tariffUsers5',
     priceKey: 'tariffPriceStart',
-    features: ['До 5 пользователей', 'Базовые функции', 'Поддержка email'],
+    features: ['pricingFeatureUsers5', 'pricingFeatureBasic', 'pricingFeatureEmailSupport'],
   },
   {
     nameKey: 'tariffTeam',
     usersKey: 'tariffUsers20',
     priceKey: 'tariffPriceTeam',
-    features: ['До 20 пользователей', 'Расширенные функции', 'Приоритетная поддержка'],
+    features: ['pricingFeatureUsers20', 'pricingFeatureAdvanced', 'pricingFeaturePrioritySupport'],
   },
   {
     nameKey: 'tariffPro',
     usersKey: 'tariffUsers50',
     priceKey: 'tariffPricePro',
-    features: ['До 50 пользователей', 'Все функции', 'Поддержка 24/7'],
+    features: ['pricingFeatureUsers50', 'pricingFeatureAll', 'pricingFeature247Support'],
   },
   {
     nameKey: 'tariffEnterprise',
     usersKey: 'tariffUsers100',
     priceKey: 'tariffPriceEnterprise',
-    features: ['До 100 пользователей', 'Все функции', 'Персональный менеджер'],
+    features: ['pricingFeatureUsers100', 'pricingFeatureAll', 'pricingFeaturePersonalManager'],
   },
   {
     nameKey: 'tariffCorporate',
     usersKey: 'tariffUsers100plus',
     priceKey: 'tariffPriceCorporate',
-    features: ['100+ пользователей', 'Индивидуальные условия', 'VIP поддержка'],
+    features: ['pricingFeatureUsers100plus', 'pricingFeatureCustom', 'pricingFeatureVipSupport'],
   },
 ];
 
@@ -84,14 +84,14 @@ const PricingSection: React.FC<PricingSectionProps> = ({ onOrderClick }) => {
                   <div className="text-themed-muted mb-4">{t(tariff.usersKey)} {t('activeUsers')}</div>
                   <ul className="mb-6 space-y-1 text-themed-muted text-sm">
                     {tariff.features.map((f, i) => (
-                      <li key={i}>{f}</li>
+                      <li key={i}>{t(f as TranslationKey)}</li>
                     ))}
                   </ul>
                   <button
                     className="w-full btn btn-primary transition-all duration-300"
                     onClick={onOrderClick}
                   >
-                    Оставить заявку
+                    {t('pricingOrderBtn')}
                   </button>
                 </div>
               </SwiperSlide>

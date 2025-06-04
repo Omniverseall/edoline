@@ -12,6 +12,7 @@ import PricingSection from './components/PricingSection';
 import ContactSection from './components/ContactSection'; // Импортируем новый компонент ContactSection
 import Footer from './components/Footer';
 
+
 const AppContent: React.FC = () => {
 
   // Просто скроллим к контактам без открытия модального окна

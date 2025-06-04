@@ -22,7 +22,7 @@ const ContactSection: React.FC = () => {
     <section id="contact-section" ref={sectionRef} className="section relative overflow-hidden py-12 sm:py-16">
       <div className="container">
         <div className={`glass rounded-xl sm:rounded-2xl p-6 sm:p-8 ${isInView ? 'animate-slide-up' : 'opacity-0'}`} style={{ animationDelay: `0.1s` }}>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-12 items-center">
             <div>
               <h3 className="text-xl sm:text-2xl font-bold mb-4 text-themed-foreground">{t('turnkeyTitle')}</h3>
               <p className="text-themed-muted mb-6 text-sm sm:text-base">

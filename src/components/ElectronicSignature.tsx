@@ -44,7 +44,7 @@ const ElectronicSignature: React.FC = () => {
       <div className="absolute top-0 right-0 w-[calc(80vw)] max-w-[800px] h-[600px] -z-10 bg-violet-500/10 dark:bg-violet-500/5 rounded-full filter blur-[100px] opacity-70"></div>
       
       <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-12 items-center">
           <div className={`${isInView ? 'animate-slide-up' : 'opacity-0'}`}>
             <h3 className="text-lg font-medium text-violet-400 mb-2">{t('eSignSubtitle')}</h3>
             <h2 className="mb-6 text-themed-foreground">{t('eSignTitle')}</h2>

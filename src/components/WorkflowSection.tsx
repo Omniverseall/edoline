@@ -40,7 +40,7 @@ const WorkflowSection: React.FC = () => {
       <div className="absolute top-0 right-0 w-[calc(100vw+100px)] max-w-[1000px] h-[600px] -z-10 bg-teal-500/10 dark:bg-teal-500/5 rounded-full filter blur-[100px]"></div>
 
       <div className="container">
-        <div className={`text-center max-w-3xl mx-auto mb-12 sm:mb-16 ${isInView ? 'animate-fade-in' : 'opacity-0'}`}>
+        <div className={`text-center max-w-3xl mx-auto mb-8 sm:mb-16 ${isInView ? 'animate-fade-in' : 'opacity-0'}`}>
           <h3 className="text-lg font-medium text-teal-400 mb-2">{t('workflowSectionSubtitle')}</h3>
           <h2 className="mb-6 text-themed-foreground">{t('workflowSectionTitle')}</h2>
           <p className="text-themed-muted text-lg">

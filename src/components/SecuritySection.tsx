@@ -27,7 +27,7 @@ const SecuritySection: React.FC = () => {
 
   const deploymentOptions: DeploymentOption[] = [
     { 
-      icon: <HardDrive className="w-10 h-10 sm:w-12 sm:h-12 text-blue-400 mb-4" />, 
+      icon: <HardDrive className="w-8 h-8 sm:w-12 sm:h-12 text-blue-400 mb-4" />, 
       titleKey: 'onPremiseDeploymentTitle', 
       descKey: 'onPremiseDeploymentDesc',
       features: [

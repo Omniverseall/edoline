@@ -29,11 +29,11 @@ const Footer: React.FC = () => {
       <div className="absolute inset-0 -z-10 bg-grid-pattern opacity-10 dark:opacity-5"></div>
       
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8 mb-4 sm:mb-12">
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center space-x-2 mb-4 sm:mb-6">
               <FileText className="w-7 h-7 sm:w-8 sm:h-8 text-blue-500" />
-              <span className="text-xl sm:text-2xl font-bold text-themed-foreground">EdoLine</span>
+              <span className="text-xl sm:text-2xl font-bold text-blue-500 ">EdoLine</span>
             </div>
             <p className="text-themed-muted mb-4 sm:mb-6 text-sm sm:text-base">
               {t('footerDescription')}

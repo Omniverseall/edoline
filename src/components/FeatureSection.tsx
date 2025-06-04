@@ -35,7 +35,7 @@ const FeatureSection: React.FC<FeatureSectionProps> = ({
       <div className={`absolute -z-10 w-[calc(80vw)] max-w-[1000px] h-[800px] rounded-full filter blur-[120px] bg-gradient-to-r ${gradient} opacity-30 dark:opacity-20 ${direction === 'right' ? 'left-0 -translate-x-1/2' : 'right-0 translate-x-1/2'} top-1/2 -translate-y-1/2`}></div>
       
       <div className="container">
-        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center ${direction === 'left' ? 'lg:flex-row-reverse' : ''}`}>
+        <div className={`grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-16 items-center ${direction === 'left' ? 'lg:flex-row-reverse' : ''}`}>
           <div className={`${isInView ? 'animate-slide-up' : 'opacity-0'}`}>
             <h3 className="text-lg font-medium text-blue-400 mb-2">{t(subtitleKey)}</h3>
             <h2 className="mb-6 gradient-text">{t(titleKey)}</h2>

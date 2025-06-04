@@ -43,7 +43,7 @@ const Hero: React.FC = () => {
           <div className="absolute top-[35%] left-[8%] sm:left-[18%] w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-gradient-to-r from-cyan-500/10 to-blue-500/10 dark:from-cyan-500/20 dark:to-blue-500/20 backdrop-blur-sm animate-float" style={{ animationDelay: '2s' }}></div>
         </div>
 
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-2 sm:px-4 relative z-10 max-w-2xl sm:max-w-4xl">
           <div className="text-center max-w-4xl mx-auto">
             <div className="flex justify-center mb-6 sm:mb-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
               <img src={logoSrc} alt={t('logoAlt')} className="h-10 sm:h-[200px] md:h-[200px] object-contain" />

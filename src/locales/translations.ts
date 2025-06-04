@@ -198,7 +198,24 @@ export const translations = {
     hrDocuments: "HR документооборот",
     knowledgeBase: "База знаний",
     electronicSignature: "Электронная подпись",
-    allRightsReserved: "Все права защищены."
+    allRightsReserved: "Все права защищены.",
+
+    // Pricing features (добавить для локализации карточек тарифов)
+    pricingFeatureUsers5: "До 5 пользователей",
+    pricingFeatureUsers20: "До 20 пользователей",
+    pricingFeatureUsers50: "До 50 пользователей",
+    pricingFeatureUsers100: "До 100 пользователей",
+    pricingFeatureUsers100plus: "100+ пользователей",
+    pricingFeatureBasic: "Базовые функции",
+    pricingFeatureAdvanced: "Расширенные функции",
+    pricingFeatureAll: "Все функции",
+    pricingFeatureEmailSupport: "Поддержка email",
+    pricingFeaturePrioritySupport: "Приоритетная поддержка",
+    pricingFeature247Support: "Поддержка 24/7",
+    pricingFeaturePersonalManager: "Персональный менеджер",
+    pricingFeatureCustom: "Индивидуальные условия",
+    pricingFeatureVipSupport: "VIP поддержка",
+    pricingOrderBtn: "Оставить заявку"
   },
 
   en: {
@@ -235,6 +252,7 @@ export const translations = {
     solutions: "Solutions",
     processes: "Processes",
     security: "Security",
+    pricing: "Pricing & Services", // Добавлено для навигации
     contacts: "Contacts",
 
     // Hero section
@@ -396,7 +414,24 @@ export const translations = {
     hrDocuments: "HR Documents",
     knowledgeBase: "Knowledge Base",
     electronicSignature: "Electronic Signature",
-    allRightsReserved: "All rights reserved."
+    allRightsReserved: "All rights reserved.",
+
+    // Pricing features
+    pricingFeatureUsers5: "Up to 5 users",
+    pricingFeatureUsers20: "Up to 20 users",
+    pricingFeatureUsers50: "Up to 50 users",
+    pricingFeatureUsers100: "Up to 100 users",
+    pricingFeatureUsers100plus: "100+ users",
+    pricingFeatureBasic: "Basic features",
+    pricingFeatureAdvanced: "Advanced features",
+    pricingFeatureAll: "All features",
+    pricingFeatureEmailSupport: "Email support",
+    pricingFeaturePrioritySupport: "Priority support",
+    pricingFeature247Support: "24/7 support",
+    pricingFeaturePersonalManager: "Personal manager",
+    pricingFeatureCustom: "Custom terms",
+    pricingFeatureVipSupport: "VIP support",
+    pricingOrderBtn: "Order now"
   },
 
   uz: {
@@ -595,7 +630,24 @@ export const translations = {
     hrDocuments: "HR hujjatlari",
     knowledgeBase: "Bilimlar bazasi",
     electronicSignature: "Elektron imzo",
-    allRightsReserved: "Barcha huquqlar himoyalangan."
+    allRightsReserved: "Barcha huquqlar himoyalangan.",
+
+    // Pricing features
+    pricingFeatureUsers5: "5 tagacha foydalanuvchi",
+    pricingFeatureUsers20: "20 tagacha foydalanuvchi",
+    pricingFeatureUsers50: "50 tagacha foydalanuvchi",
+    pricingFeatureUsers100: "100 tagacha foydalanuvchi",
+    pricingFeatureUsers100plus: "100+ foydalanuvchi",
+    pricingFeatureBasic: "Asosiy funksiyalar",
+    pricingFeatureAdvanced: "Kengaytirilgan funksiyalar",
+    pricingFeatureAll: "Barcha funksiyalar",
+    pricingFeatureEmailSupport: "Email yordam",
+    pricingFeaturePrioritySupport: "Ustuvor yordam",
+    pricingFeature247Support: "24/7 yordam",
+    pricingFeaturePersonalManager: "Shaxsiy menejer",
+    pricingFeatureCustom: "Individual shartlar",
+    pricingFeatureVipSupport: "VIP yordam",
+    pricingOrderBtn: "Buyurtma berish"
   }
 };
 
