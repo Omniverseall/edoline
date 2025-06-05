@@ -9,71 +9,144 @@ interface LoadingAnimationProps {
 
 const LoadingAnimation: React.FC<LoadingAnimationProps> = ({ onComplete }) => {
   const [isVisible, setIsVisible] = useState(true);
+  const [animationPhase, setAnimationPhase] = useState(0);
   const { t } = useLanguage();
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(false);
-      setTimeout(onComplete, 500); // Даем время для fade out анимации
-    }, 3000); // Показываем анимацию 3 секунды
+    // Фазы анимации
+    const phaseTimers = [
+      setTimeout(() => setAnimationPhase(1), 500),   // Появление букв
+      setTimeout(() => setAnimationPhase(2), 1500),  // Формирование файла
+      setTimeout(() => setAnimationPhase(3), 2500),  // Показ EdoLine
+    ];
 
-    return () => clearTimeout(timer);
+    const completeTimer = setTimeout(() => {
+      setIsVisible(false);
+      setTimeout(onComplete, 500);
+    }, 3500);
+
+    return () => {
+      phaseTimers.forEach(timer => clearTimeout(timer));
+      clearTimeout(completeTimer);
+    };
   }, [onComplete]);
+
+  const letters = ['E', 'd', 'o', 'L', 'i', 'n', 'e'];
 
   return (
     <div className={`fixed inset-0 z-50 flex items-center justify-center transition-all duration-500 ${
       isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
     }`}>
       {/* Фон с градиентом */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-violet-900 dark:from-slate-900 dark:via-blue-900 dark:to-purple-900 light:from-blue-50 light:via-purple-50 light:to-violet-50"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-violet-900"></div>
       
       {/* Анимированные частицы */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-blue-400 rounded-full animate-ping" style={{ animationDelay: '0s' }}></div>
-        <div className="absolute top-3/4 right-1/4 w-3 h-3 bg-purple-400 rounded-full animate-ping" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/3 w-1 h-1 bg-violet-400 rounded-full animate-ping" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-1/4 right-1/3 w-2 h-2 bg-cyan-400 rounded-full animate-ping" style={{ animationDelay: '0.5s' }}></div>
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={i}
+            className={`absolute w-1 h-1 bg-blue-400 rounded-full animate-ping ${
+              animationPhase >= 1 ? 'opacity-100' : 'opacity-0'
+            }`}
+            style={{
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 2}s`,
+              animationDuration: `${1 + Math.random() * 2}s`,
+            }}
+          />
+        ))}
       </div>
 
       {/* Основной контент */}
       <div className="relative z-10 text-center">
-        {/* Иконка файла с анимацией */}
-        <div className="mb-8 relative">
-          <div className="animate-bounce">
+        {/* Анимированные буквы, формирующие файл */}
+        <div className="mb-8 relative flex items-center justify-center h-32">
+          {/* Буквы, которые летят и формируют иконку файла */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            {letters.map((letter, index) => (
+              <div
+                key={index}
+                className={`absolute text-4xl font-bold text-white transition-all duration-1000 transform ${
+                  animationPhase >= 1 
+                    ? `animate-bounce opacity-100 ${
+                        animationPhase >= 2 
+                          ? 'scale-0 opacity-0' 
+                          : ''
+                      }` 
+                    : 'scale-0 opacity-0'
+                }`}
+                style={{
+                  left: `${index * 40 - 120}px`,
+                  animationDelay: `${index * 0.1}s`,
+                  animationDuration: '0.8s',
+                }}
+              >
+                {letter}
+              </div>
+            ))}
+          </div>
+
+          {/* Иконка файла, которая появляется из букв */}
+          <div className={`transition-all duration-1000 transform ${
+            animationPhase >= 2 
+              ? 'scale-100 opacity-100 animate-float' 
+              : 'scale-0 opacity-0'
+          }`}>
             <File 
-              className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 mx-auto text-white dark:text-blue-300 light:text-blue-600" 
+              className="w-24 h-24 text-white" 
               strokeWidth={1.5}
             />
-          </div>
-          
-          {/* Круги вокруг иконки */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-32 h-32 sm:w-40 sm:h-40 border-2 border-blue-400/30 rounded-full animate-spin-slow"></div>
-          </div>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-24 h-24 sm:w-28 sm:h-28 border border-purple-400/40 rounded-full animate-pulse"></div>
+            
+            {/* Круги вокруг иконки */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-40 h-40 border-2 border-blue-400/30 rounded-full animate-spin-slow"></div>
+            </div>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-32 h-32 border border-purple-400/40 rounded-full animate-pulse"></div>
+            </div>
           </div>
         </div>
 
-        {/* Пульсирующий текст */}
-        <div className="space-y-4">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white dark:text-slate-100 light:text-slate-800 animate-pulse">
+        {/* Пульсирующий текст загрузки */}
+        <div className={`space-y-4 transition-all duration-500 ${
+          animationPhase >= 2 ? 'opacity-100' : 'opacity-0'
+        }`}>
+          <h2 className="text-3xl font-bold text-white animate-pulse">
             {t('loadingTitle')}
           </h2>
-          <p className="text-lg sm:text-xl text-white/80 dark:text-slate-300 light:text-slate-600 animate-pulse" style={{ animationDelay: '0.5s' }}>
+          <p className="text-xl text-white/80 animate-pulse" style={{ animationDelay: '0.5s' }}>
             {t('loadingSubtitle')}
           </p>
         </div>
 
         {/* Полоса загрузки */}
-        <div className="mt-8 w-64 sm:w-80 mx-auto">
-          <div className="w-full bg-white/20 dark:bg-slate-700/50 light:bg-slate-300/50 rounded-full h-2">
-            <div className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full animate-pulse loading-bar"></div>
+        <div className={`mt-8 w-80 mx-auto transition-all duration-500 ${
+          animationPhase >= 2 ? 'opacity-100' : 'opacity-0'
+        }`}>
+          <div className="w-full bg-white/20 rounded-full h-2">
+            <div className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full loading-bar"></div>
+          </div>
+        </div>
+
+        {/* EdoLine логотип */}
+        <div className={`mt-12 transition-all duration-1000 transform ${
+          animationPhase >= 3 
+            ? 'translate-y-0 opacity-100 scale-100' 
+            : 'translate-y-8 opacity-0 scale-95'
+        }`}>
+          <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-violet-400 animate-pulse">
+            EdoLine
+          </div>
+          <div className="mt-2 text-sm text-white/60 tracking-widest uppercase">
+            Document Management System
           </div>
         </div>
 
         {/* Точки загрузки */}
-        <div className="flex justify-center mt-6 space-x-2">
+        <div className={`flex justify-center mt-6 space-x-2 transition-all duration-500 ${
+          animationPhase >= 2 ? 'opacity-100' : 'opacity-0'
+        }`}>
           <div className="w-3 h-3 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0s' }}></div>
           <div className="w-3 h-3 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
           <div className="w-3 h-3 bg-violet-400 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
