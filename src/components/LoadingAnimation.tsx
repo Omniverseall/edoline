@@ -11,6 +11,9 @@ const LoadingAnimation: React.FC<LoadingAnimationProps> = ({ onComplete }) => {
   const [showIcon, setShowIcon] = useState(false);
   const [showLetters, setShowLetters] = useState<boolean[]>(Array(letters.length).fill(false));
 
+  const firstLetterAppearTime = 1500; // Время начала появления первой буквы
+  const letterStaggerTime = 100; // Задержка между появлением букв (было 200)
+
   useEffect(() => {
     const iconTimer = setTimeout(() => {
       setShowIcon(true);
@@ -23,13 +26,29 @@ const LoadingAnimation: React.FC<LoadingAnimationProps> = ({ onComplete }) => {
           newShowLetters[index] = true;
           return newShowLetters;
         });
-      }, 1500 + index * 200)
+      }, firstLetterAppearTime + index * letterStaggerTime)
     );
 
-    const completeTimerDelay = 5500;
+    // Расчет времени завершения всех анимаций
+    // Иконка: появляется в 500ms, анимация 1000ms, заканчивается в 1500ms.
+    // Последняя буква 'e' (index 6):
+    //   - showLetters[6] становится true в: 1500ms + 6 * 100ms = 2100ms.
+    //   - Анимация буквы 'e' (duration-700) начинается в 2100ms, заканчивается в 2100ms + 700ms = 2800ms.
+    // Подзаголовок (зависит от showLetters[6]):
+    //   - showLetters[6] true в 2100ms.
+    //   - Tailwind 'delay-1000' -> анимация начинается в 2100ms + 1000ms = 3100ms.
+    //   - Tailwind 'duration-1000' -> анимация заканчивается в 3100ms + 1000ms = 4100ms.
+    // Точки (зависят от showLetters[6]):
+    //   - showLetters[6] true в 2100ms.
+    //   - Tailwind 'delay-1500' -> анимация начинается в 2100ms + 1500ms = 3600ms.
+    //   - Tailwind 'duration-1000' -> анимация заканчивается в 3600ms + 1000ms = 4600ms.
+    // Самый поздний элемент (точки) заканчивает анимацию в 4600ms.
+    // Добавим небольшую паузу перед скрытием.
+    const completeTimerDelay = 4600 + 300; // 4900ms (было 5500ms)
+
     const completeTimer = setTimeout(() => {
       setIsVisible(false);
-      setTimeout(onComplete, 500);
+      setTimeout(onComplete, 500); // 500ms для fade-out
     }, completeTimerDelay);
 
     return () => {
@@ -37,7 +56,7 @@ const LoadingAnimation: React.FC<LoadingAnimationProps> = ({ onComplete }) => {
       letterTimers.forEach(timer => clearTimeout(timer));
       clearTimeout(completeTimer);
     };
-  }, [onComplete, letters.length]);
+  }, [onComplete, letters.length, firstLetterAppearTime, letterStaggerTime]);
 
   return (
     <div className={`fixed inset-0 z-50 flex items-center justify-center transition-all duration-500 ${
@@ -60,14 +79,12 @@ const LoadingAnimation: React.FC<LoadingAnimationProps> = ({ onComplete }) => {
           {letters.map((letter, index) => (
             <div
               key={index}
-              className={`text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-700 ease-out ${
+              className={`text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-700 ease-out ${ // Длительность анимации самой буквы 700ms
                 showLetters[index]
                   ? 'opacity-100 transform translate-y-0'
                   : 'opacity-0 transform translate-y-8'
               }`}
-              style={{
-                transitionDelay: `${index * 200}ms`
-              }}
+              // Убрали style={{ transitionDelay: ... }} отсюда
             >
               {letter}
             </div>
