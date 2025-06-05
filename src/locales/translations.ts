@@ -1,4 +1,3 @@
-
 export type TranslationKey = 
   | 'logoAlt'
   | 'heroTitle'
@@ -173,7 +172,62 @@ export type TranslationKey =
   | 'pricingFeature247Support'
   | 'pricingFeaturePersonalManager'
   | 'pricingFeatureVipSupport'
-  | 'pricingOrderBtn';
+  | 'pricingOrderBtn'
+  // Security Section
+  | 'securitySectionMainTitle'
+  | 'securitySectionMainDesc'
+  | 'onPremiseDeploymentTitle'
+  | 'onPremiseDeploymentDesc'
+  | 'onPremiseFeature1'
+  | 'onPremiseFeature2'
+  | 'onPremiseFeature3'
+  | 'cloudDeploymentTitle'
+  | 'cloudDeploymentDesc'
+  | 'cloudFeature1'
+  | 'cloudFeature2'
+  | 'cloudFeature3'
+  | 'securityBenefitConfidentialityTitle'
+  | 'securityBenefitConfidentialityDesc'
+  | 'securityBenefitControlTitle'
+  | 'securityBenefitControlDesc'
+  | 'securityBenefitComplianceTitle'
+  | 'securityBenefitComplianceDesc'
+  | 'securityBenefitAdminTitle'
+  | 'securityBenefitAdminDesc'
+  // Workflow Section
+  | 'workflowSectionSubtitle'
+  | 'workflowSectionTitle'
+  | 'workflowSectionDescription'
+  | 'workflowVoteTitle'
+  | 'workflowVoteFeat1Title'
+  | 'workflowVoteFeat1Desc'
+  | 'workflowVoteFeat2Title'
+  | 'workflowVoteFeat2Desc'
+  | 'workflowVoteFeat3Title'
+  | 'workflowVoteFeat3Desc'
+  | 'workflowDynDocTitle'
+  | 'workflowDynDocFeat1Title'
+  | 'workflowDynDocFeat1Desc'
+  | 'workflowDynDocFeat2Title'
+  | 'workflowDynDocFeat2Desc'
+  | 'workflowDynDocFeat3Title'
+  | 'workflowDynDocFeat3Desc'
+  | 'workflowHRTitle'
+  | 'workflowHRFeat1Title'
+  | 'workflowHRFeat1Desc'
+  | 'workflowHRFeat2Title'
+  | 'workflowHRFeat2Desc'
+  | 'workflowHRFeat3Title'
+  | 'workflowHRFeat3Desc'
+  | 'workflowHRFeat4Title'
+  | 'workflowHRFeat4Desc'
+  | 'workflowControlTitle'
+  | 'workflowControlFeat1Title'
+  | 'workflowControlFeat1Desc'
+  | 'workflowControlFeat2Title'
+  | 'workflowControlFeat2Desc'
+  | 'workflowControlFeat3Title'
+  | 'workflowControlFeat3Desc';
 
 export type Language = 'ru' | 'en' | 'uz';
 
@@ -357,6 +411,61 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     // Loading
     loadingTitle: 'Добро пожаловать!',
     loadingSubtitle: 'Загружаем систему управления документами...',
+    // Security Section
+    securitySectionMainTitle: 'Безопасность и развертывание',
+    securitySectionMainDesc: 'Надежная защита ваших данных с гибкими вариантами развертывания',
+    onPremiseDeploymentTitle: 'Локальное развертывание',
+    onPremiseDeploymentDesc: 'Полный контроль над данными и инфраструктурой',
+    onPremiseFeature1: 'Развертывание на собственных серверах',
+    onPremiseFeature2: 'Полный контроль над данными',
+    onPremiseFeature3: 'Настройка под корпоративные стандарты',
+    cloudDeploymentTitle: 'Облачное развертывание',
+    cloudDeploymentDesc: 'Быстрое развертывание с минимальными затратами',
+    cloudFeature1: 'Быстрый запуск и масштабирование',
+    cloudFeature2: 'Автоматические обновления',
+    cloudFeature3: 'Резервное копирование в облаке',
+    securityBenefitConfidentialityTitle: 'Конфиденциальность',
+    securityBenefitConfidentialityDesc: 'Защита корпоративной информации',
+    securityBenefitControlTitle: 'Контроль доступа',
+    securityBenefitControlDesc: 'Гибкое управление правами пользователей',
+    securityBenefitComplianceTitle: 'Соответствие стандартам',
+    securityBenefitComplianceDesc: 'Соблюдение требований безопасности',
+    securityBenefitAdminTitle: 'Администрирование',
+    securityBenefitAdminDesc: 'Централизованное управление системой',
+    // Workflow Section
+    workflowSectionSubtitle: 'Рабочие процессы',
+    workflowSectionTitle: 'Автоматизация бизнес-процессов',
+    workflowSectionDescription: 'Оптимизируйте работу с документами с помощью автоматизированных процессов и интеллектуальных решений.',
+    workflowVoteTitle: 'Система голосования',
+    workflowVoteFeat1Title: 'Создание голосований',
+    workflowVoteFeat1Desc: 'Легкое создание и настройка процедур голосования',
+    workflowVoteFeat2Title: 'Анонимность',
+    workflowVoteFeat2Desc: 'Обеспечение конфиденциальности голосования',
+    workflowVoteFeat3Title: 'Результаты в реальном времени',
+    workflowVoteFeat3Desc: 'Мгновенная обработка и отображение результатов',
+    workflowDynDocTitle: 'Динамические документы',
+    workflowDynDocFeat1Title: 'Адаптивные формы',
+    workflowDynDocFeat1Desc: 'Документы, изменяющиеся в зависимости от контекста',
+    workflowDynDocFeat2Title: 'Условная логика',
+    workflowDynDocFeat2Desc: 'Умные поля, зависящие от введенных данных',
+    workflowDynDocFeat3Title: 'Автозаполнение',
+    workflowDynDocFeat3Desc: 'Автоматическое заполнение на основе существующих данных',
+    workflowHRTitle: 'HR-процессы',
+    workflowHRFeat1Title: 'Прием на работу',
+    workflowHRFeat1Desc: 'Автоматизация процесса найма сотрудников',
+    workflowHRFeat2Title: 'Управление отпусками',
+    workflowHRFeat2Desc: 'Система подачи и одобрения заявок на отпуск',
+    workflowHRFeat3Title: 'Оценка персонала',
+    workflowHRFeat3Desc: 'Проведение аттестаций и оценок эффективности',
+    workflowHRFeat4Title: 'Документооборот HR',
+    workflowHRFeat4Desc: 'Управление кадровой документацией',
+    workflowControlTitle: 'Контроль знаний',
+    workflowControlFeat1Title: 'Тестирование',
+    workflowControlFeat1Desc: 'Система проведения тестов и экзаменов',
+    workflowControlFeat2Title: 'База знаний',
+    workflowControlFeat2Desc: 'Централизованное хранение информации',
+    workflowControlFeat3Title: 'Обучающие материалы',
+    workflowControlFeat3Desc: 'Размещение и управление образовательным контентом',
   },
   en: {
     logoAlt: 'Document Management System Logo',
@@ -537,6 +646,61 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     // Loading
     loadingTitle: 'Welcome!',
     loadingSubtitle: 'Loading document management system...',
+    // Security Section
+    securitySectionMainTitle: 'Security and Deployment',
+    securitySectionMainDesc: 'Reliable protection of your data with flexible deployment options',
+    onPremiseDeploymentTitle: 'On-Premise Deployment',
+    onPremiseDeploymentDesc: 'Full control over data and infrastructure',
+    onPremiseFeature1: 'Deploy on your own servers',
+    onPremiseFeature2: 'Complete data control',
+    onPremiseFeature3: 'Configure to corporate standards',
+    cloudDeploymentTitle: 'Cloud Deployment',
+    cloudDeploymentDesc: 'Fast deployment with minimal costs',
+    cloudFeature1: 'Quick launch and scaling',
+    cloudFeature2: 'Automatic updates',
+    cloudFeature3: 'Cloud backup',
+    securityBenefitConfidentialityTitle: 'Confidentiality',
+    securityBenefitConfidentialityDesc: 'Corporate information protection',
+    securityBenefitControlTitle: 'Access Control',
+    securityBenefitControlDesc: 'Flexible user rights management',
+    securityBenefitComplianceTitle: 'Standards Compliance',
+    securityBenefitComplianceDesc: 'Meeting security requirements',
+    securityBenefitAdminTitle: 'Administration',
+    securityBenefitAdminDesc: 'Centralized system management',
+    // Workflow Section
+    workflowSectionSubtitle: 'Workflows',
+    workflowSectionTitle: 'Business Process Automation',
+    workflowSectionDescription: 'Optimize document work with automated processes and intelligent solutions.',
+    workflowVoteTitle: 'Voting System',
+    workflowVoteFeat1Title: 'Create Voting',
+    workflowVoteFeat1Desc: 'Easy creation and configuration of voting procedures',
+    workflowVoteFeat2Title: 'Anonymity',
+    workflowVoteFeat2Desc: 'Ensuring voting confidentiality',
+    workflowVoteFeat3Title: 'Real-time Results',
+    workflowVoteFeat3Desc: 'Instant processing and display of results',
+    workflowDynDocTitle: 'Dynamic Documents',
+    workflowDynDocFeat1Title: 'Adaptive Forms',
+    workflowDynDocFeat1Desc: 'Documents that change depending on context',
+    workflowDynDocFeat2Title: 'Conditional Logic',
+    workflowDynDocFeat2Desc: 'Smart fields that depend on entered data',
+    workflowDynDocFeat3Title: 'Auto-fill',
+    workflowDynDocFeat3Desc: 'Automatic filling based on existing data',
+    workflowHRTitle: 'HR Processes',
+    workflowHRFeat1Title: 'Hiring',
+    workflowHRFeat1Desc: 'Automation of employee recruitment process',
+    workflowHRFeat2Title: 'Leave Management',
+    workflowHRFeat2Desc: 'System for submitting and approving leave requests',
+    workflowHRFeat3Title: 'Personnel Assessment',
+    workflowHRFeat3Desc: 'Conducting certifications and performance evaluations',
+    workflowHRFeat4Title: 'HR Document Flow',
+    workflowHRFeat4Desc: 'Management of personnel documentation',
+    workflowControlTitle: 'Knowledge Control',
+    workflowControlFeat1Title: 'Testing',
+    workflowControlFeat1Desc: 'System for conducting tests and exams',
+    workflowControlFeat2Title: 'Knowledge Base',
+    workflowControlFeat2Desc: 'Centralized information storage',
+    workflowControlFeat3Title: 'Training Materials',
+    workflowControlFeat3Desc: 'Placement and management of educational content',
   },
   uz: {
     logoAlt: 'Hujjatlarni boshqarish tizimi logotipi',
@@ -717,5 +881,60 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     // Loading
     loadingTitle: 'Xush kelibsiz!',
     loadingSubtitle: 'Hujjat boshqaruv tizimi yuklanmoqda...',
+    // Security Section
+    securitySectionMainTitle: 'Xavfsizlik va Joylashtirish',
+    securitySectionMainDesc: 'Ma\'lumotlaringizning ishonchli himoyasi va moslashuvchan joylashtirish variantlari',
+    onPremiseDeploymentTitle: 'Mahalliy Joylashtirish',
+    onPremiseDeploymentDesc: 'Ma\'lumotlar va infratuzilma ustidan to\'liq nazorat',
+    onPremiseFeature1: 'O\'z serverlaringizda joylashtirish',
+    onPremiseFeature2: 'Ma\'lumotlar ustidan to\'liq nazorat',
+    onPremiseFeature3: 'Korporativ standartlarga sozlash',
+    cloudDeploymentTitle: 'Bulutli Joylashtirish',
+    cloudDeploymentDesc: 'Minimal xarajatlar bilan tez joylashtirish',
+    cloudFeature1: 'Tez ishga tushirish va kengaytirish',
+    cloudFeature2: 'Avtomatik yangilanishlar',
+    cloudFeature3: 'Bulutli zaxira nusxalash',
+    securityBenefitConfidentialityTitle: 'Maxfiylik',
+    securityBenefitConfidentialityDesc: 'Korporativ ma\'lumotlarni himoya qilish',
+    securityBenefitControlTitle: 'Kirish Nazorati',
+    securityBenefitControlDesc: 'Foydalanuvchi huquqlarini moslashuvchan boshqarish',
+    securityBenefitComplianceTitle: 'Standartlarga Muvofiqlik',
+    securityBenefitComplianceDesc: 'Xavfsizlik talablariga javob berish',
+    securityBenefitAdminTitle: 'Boshqaruv',
+    securityBenefitAdminDesc: 'Markazlashtirilgan tizim boshqaruvi',
+    // Workflow Section
+    workflowSectionSubtitle: 'Ish Jarayonlari',
+    workflowSectionTitle: 'Biznes Jarayonlarini Avtomatlashtirish',
+    workflowSectionDescription: 'Avtomatlashtirilgan jarayonlar va aqlli yechimlar yordamida hujjat bilan ishlashni optimallashtiring.',
+    workflowVoteTitle: 'Ovoz Berish Tizimi',
+    workflowVoteFeat1Title: 'Ovoz Berish Yaratish',
+    workflowVoteFeat1Desc: 'Ovoz berish tartiblarini oson yaratish va sozlash',
+    workflowVoteFeat2Title: 'Anonimlik',
+    workflowVoteFeat2Desc: 'Ovoz berish maxfiyligini ta\'minlash',
+    workflowVoteFeat3Title: 'Haqiqiy Vaqtda Natijalar',
+    workflowVoteFeat3Desc: 'Natijalarni tezkor qayta ishlash va ko\'rsatish',
+    workflowDynDocTitle: 'Dinamik Hujjatlar',
+    workflowDynDocFeat1Title: 'Moslashuvchan Formalar',
+    workflowDynDocFeat1Desc: 'Kontekstga qarab o\'zgaruvchan hujjatlar',
+    workflowDynDocFeat2Title: 'Shartli Mantiq',
+    workflowDynDocFeat2Desc: 'Kiritilgan ma\'lumotlarga bog\'liq aqlli maydonlar',
+    workflowDynDocFeat3Title: 'Avto-to\'ldirish',
+    workflowDynDocFeat3Desc: 'Mavjud ma\'lumotlar asosida avtomatik to\'ldirish',
+    workflowHRTitle: 'HR Jarayonlari',
+    workflowHRFeat1Title: 'Ishga Qabul Qilish',
+    workflowHRFeat1Desc: 'Xodimlarni yollash jarayonini avtomatlashtirish',
+    workflowHRFeat2Title: 'Ta\'til Boshqaruvi',
+    workflowHRFeat2Desc: 'Ta\'til arizalarini topshirish va tasdiqlash tizimi',
+    workflowHRFeat3Title: 'Kadrlar Baholash',
+    workflowHRFeat3Desc: 'Attestatsiya va samaradorlik baholashini o\'tkazish',
+    workflowHRFeat4Title: 'HR Hujjat Aylanishi',
+    workflowHRFeat4Desc: 'Kadrlar hujjatlarini boshqarish',
+    workflowControlTitle: 'Bilim Nazorati',
+    workflowControlFeat1Title: 'Sinovlar',
+    workflowControlFeat1Desc: 'Test va imtihonlar o\'tkazish tizimi',
+    workflowControlFeat2Title: 'Bilimlar Bazasi',
+    workflowControlFeat2Desc: 'Markazlashtirilgan ma\'lumotlar saqlash',
+    workflowControlFeat3Title: 'O\'quv Materiallari',
+    workflowControlFeat3Desc: 'Ta\'lim kontentini joylashtirish va boshqarish',
   }
 };
