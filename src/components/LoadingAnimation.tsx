@@ -1,6 +1,5 @@
 
 import React, { useState, useEffect } from 'react';
-import { File } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 interface LoadingAnimationProps {
@@ -9,147 +8,102 @@ interface LoadingAnimationProps {
 
 const LoadingAnimation: React.FC<LoadingAnimationProps> = ({ onComplete }) => {
   const [isVisible, setIsVisible] = useState(true);
-  const [animationPhase, setAnimationPhase] = useState(0);
+  const [progress, setProgress] = useState(0);
   const { t } = useLanguage();
 
   useEffect(() => {
-    // Фазы анимации
-    const phaseTimers = [
-      setTimeout(() => setAnimationPhase(1), 500),   // Появление букв
-      setTimeout(() => setAnimationPhase(2), 1500),  // Формирование файла
-      setTimeout(() => setAnimationPhase(3), 2500),  // Показ EdoLine
-    ];
+    // Плавное увеличение прогресса
+    const progressInterval = setInterval(() => {
+      setProgress(prev => {
+        if (prev >= 100) {
+          clearInterval(progressInterval);
+          return 100;
+        }
+        return prev + 2;
+      });
+    }, 50);
 
+    // Завершение загрузки
     const completeTimer = setTimeout(() => {
       setIsVisible(false);
-      setTimeout(onComplete, 500);
-    }, 3500);
+      setTimeout(onComplete, 300);
+    }, 3000);
 
     return () => {
-      phaseTimers.forEach(timer => clearTimeout(timer));
+      clearInterval(progressInterval);
       clearTimeout(completeTimer);
     };
   }, [onComplete]);
 
-  const letters = ['E', 'd', 'o', 'L', 'i', 'n', 'e'];
-
   return (
-    <div className={`fixed inset-0 z-50 flex items-center justify-center transition-all duration-500 ${
+    <div className={`fixed inset-0 z-50 flex items-center justify-center transition-all duration-300 ${
       isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
     }`}>
-      {/* Фон с градиентом */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-violet-900"></div>
+      {/* Минималистичный фон */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900"></div>
       
-      {/* Анимированные частицы */}
+      {/* Геометрические элементы */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className={`absolute w-1 h-1 bg-blue-400 rounded-full animate-ping ${
-              animationPhase >= 1 ? 'opacity-100' : 'opacity-0'
-            }`}
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 2}s`,
-              animationDuration: `${1 + Math.random() * 2}s`,
-            }}
-          />
-        ))}
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 border border-blue-400/20 rounded-full animate-spin-slow"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-24 h-24 border border-purple-400/20 rounded-full animate-spin-slow" style={{ animationDirection: 'reverse' }}></div>
+        <div className="absolute top-1/2 left-1/6 w-16 h-16 border border-cyan-400/20 rounded-full animate-pulse"></div>
       </div>
 
-      {/* Основной контент */}
+      {/* Главный контент */}
       <div className="relative z-10 text-center">
-        {/* Анимированные буквы, формирующие файл */}
-        <div className="mb-8 relative flex items-center justify-center h-32">
-          {/* Буквы, которые летят и формируют иконку файла */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            {letters.map((letter, index) => (
-              <div
-                key={index}
-                className={`absolute text-4xl font-bold text-white transition-all duration-1000 transform ${
-                  animationPhase >= 1 
-                    ? `animate-bounce opacity-100 ${
-                        animationPhase >= 2 
-                          ? 'scale-0 opacity-0' 
-                          : ''
-                      }` 
-                    : 'scale-0 opacity-0'
-                }`}
-                style={{
-                  left: `${index * 40 - 120}px`,
-                  animationDelay: `${index * 0.1}s`,
-                  animationDuration: '0.8s',
-                }}
-              >
-                {letter}
-              </div>
-            ))}
-          </div>
-
-          {/* Иконка файла, которая появляется из букв */}
-          <div className={`transition-all duration-1000 transform ${
-            animationPhase >= 2 
-              ? 'scale-100 opacity-100 animate-float' 
-              : 'scale-0 opacity-0'
-          }`}>
-            <File 
-              className="w-24 h-24 text-white" 
-              strokeWidth={1.5}
+        {/* Центральная окружность с прогрессом */}
+        <div className="relative mb-12 mx-auto w-48 h-48 flex items-center justify-center">
+          {/* Фоновая окружность */}
+          <div className="absolute inset-0 rounded-full border-4 border-white/10"></div>
+          
+          {/* Прогресс окружность */}
+          <svg className="absolute inset-0 w-full h-full transform -rotate-90" viewBox="0 0 100 100">
+            <circle
+              cx="50"
+              cy="50"
+              r="46"
+              fill="none"
+              stroke="url(#gradient)"
+              strokeWidth="4"
+              strokeLinecap="round"
+              strokeDasharray={`${progress * 2.89} 289`}
+              className="transition-all duration-500 ease-out"
             />
-            
-            {/* Круги вокруг иконки */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-40 h-40 border-2 border-blue-400/30 rounded-full animate-spin-slow"></div>
+            <defs>
+              <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#3B82F6" />
+                <stop offset="50%" stopColor="#8B5CF6" />
+                <stop offset="100%" stopColor="#06B6D4" />
+              </linearGradient>
+            </defs>
+          </svg>
+          
+          {/* Внутренний контент */}
+          <div className="relative z-10 text-center">
+            <div className="text-4xl font-bold text-white mb-2">
+              {Math.round(progress)}%
             </div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-32 h-32 border border-purple-400/40 rounded-full animate-pulse"></div>
+            <div className="text-blue-300 text-sm uppercase tracking-widest">
+              Loading
             </div>
           </div>
         </div>
 
-        {/* Пульсирующий текст загрузки */}
-        <div className={`space-y-4 transition-all duration-500 ${
-          animationPhase >= 2 ? 'opacity-100' : 'opacity-0'
-        }`}>
-          <h2 className="text-3xl font-bold text-white animate-pulse">
-            {t('loadingTitle')}
-          </h2>
-          <p className="text-xl text-white/80 animate-pulse" style={{ animationDelay: '0.5s' }}>
-            {t('loadingSubtitle')}
+        {/* EdoLine лого */}
+        <div className="animate-pulse">
+          <h1 className="text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-cyan-400 mb-4">
+            EdoLine
+          </h1>
+          <p className="text-white/70 text-lg tracking-wider uppercase">
+            Document Management System
           </p>
         </div>
 
-        {/* Полоса загрузки */}
-        <div className={`mt-8 w-80 mx-auto transition-all duration-500 ${
-          animationPhase >= 2 ? 'opacity-100' : 'opacity-0'
-        }`}>
-          <div className="w-full bg-white/20 rounded-full h-2">
-            <div className="bg-gradient-to-r from-blue-500 to-purple-500 h-2 rounded-full loading-bar"></div>
-          </div>
-        </div>
-
-        {/* EdoLine логотип */}
-        <div className={`mt-12 transition-all duration-1000 transform ${
-          animationPhase >= 3 
-            ? 'translate-y-0 opacity-100 scale-100' 
-            : 'translate-y-8 opacity-0 scale-95'
-        }`}>
-          <div className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-violet-400 animate-pulse">
-            EdoLine
-          </div>
-          <div className="mt-2 text-sm text-white/60 tracking-widest uppercase">
-            Document Management System
-          </div>
-        </div>
-
-        {/* Точки загрузки */}
-        <div className={`flex justify-center mt-6 space-x-2 transition-all duration-500 ${
-          animationPhase >= 2 ? 'opacity-100' : 'opacity-0'
-        }`}>
-          <div className="w-3 h-3 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0s' }}></div>
-          <div className="w-3 h-3 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-          <div className="w-3 h-3 bg-violet-400 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
+        {/* Анимированные точки */}
+        <div className="flex justify-center mt-8 space-x-2">
+          <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0s' }}></div>
+          <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: '0.3s' }}></div>
+          <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce" style={{ animationDelay: '0.6s' }}></div>
         </div>
       </div>
     </div>
