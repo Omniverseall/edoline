@@ -1,6 +1,4 @@
-
 import React, { useState, useEffect } from 'react';
-import { useLanguage } from '../contexts/LanguageContext';
 
 interface LoadingAnimationProps {
   onComplete: () => void;
@@ -9,7 +7,6 @@ interface LoadingAnimationProps {
 const LoadingAnimation: React.FC<LoadingAnimationProps> = ({ onComplete }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [progress, setProgress] = useState(0);
-  const { t } = useLanguage();
 
   useEffect(() => {
     // Плавное увеличение прогресса
