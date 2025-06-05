@@ -1,6 +1,8 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { LanguageProvider } from './contexts/LanguageContext';
+import LoadingAnimation from './components/LoadingAnimation';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import DocumentManagement from './components/DocumentManagement';
@@ -9,19 +11,26 @@ import ElectronicSignature from './components/ElectronicSignature';
 import WorkflowSection from './components/WorkflowSection';
 import SecuritySection from './components/SecuritySection';
 import PricingSection from './components/PricingSection';
-import ContactSection from './components/ContactSection'; // Импортируем новый компонент ContactSection
+import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
-
 const AppContent: React.FC = () => {
+  const [isLoading, setIsLoading] = useState(true);
 
-  // Просто скроллим к контактам без открытия модального окна
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
+
   const handleOrderClick = () => {
     const contactSection = document.getElementById('contact-section');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
+
+  if (isLoading) {
+    return <LoadingAnimation onComplete={handleLoadingComplete} />;
+  }
 
   return (
     <div className="relative">
@@ -54,8 +63,8 @@ const AppContent: React.FC = () => {
         gradient="from-violet-500/20 to-pink-500/20"
       />
       <SecuritySection />
-      <PricingSection onOrderClick={handleOrderClick} /> {/* Тарифы и стоимость после Безопасности */}
-      <ContactSection /> {/* Контакты после Тарифов и стоимости */}
+      <PricingSection onOrderClick={handleOrderClick} />
+      <ContactSection />
       <Footer />
     </div>
   );
