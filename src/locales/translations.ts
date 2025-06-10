@@ -327,10 +327,10 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     tariffUsers50: 'До 50 пользователей',
     tariffUsers100: 'До 100 пользователей',
     tariffUsers100plus: 'Свыше 100 пользователей',
-    tariffPriceStart: '5000 ₽/мес',
-    tariffPriceTeam: '15000 ₽/мес',
-    tariffPricePro: '30000 ₽/мес',
-    tariffPriceEnterprise: '50000 ₽/мес',
+    tariffPriceStart: '100,000 so\'m/month',
+    tariffPriceTeam: '300,000 so\'m/month',
+    tariffPricePro: '700,000 so\'m/month',
+    tariffPriceEnterprise: '1,200,000 so\'m/month',
     tariffPriceCorporate: 'По запросу',
     activeUsers: 'активных пользователей',
     pricingFeatureUsers5: 'До 5 пользователей',
@@ -402,9 +402,9 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     pricingPlanBasic: 'Базовый',
     pricingPlanStandard: 'Стандартный',
     pricingPlanPremium: 'Премиум',
-    basicPlanPrice: '1000 ₽ / мес',
-    standardPlanPrice: '3000 ₽ / мес',
-    premiumPlanPrice: '5000 ₽ / мес',
+    basicPlanPrice: '100 000 so\'m / мес',
+    standardPlanPrice: '300 000 so\'m / мес',
+    premiumPlanPrice: '500 000 so\'m / мес',
     basicPlanDescription: 'Оптимальное решение для малого бизнеса',
     standardPlanDescription: 'Расширенные возможности для среднего бизнеса',
     premiumPlanDescription: 'Максимальная функциональность для крупных предприятий',
@@ -562,10 +562,10 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     tariffUsers50: 'Up to 50 users',
     tariffUsers100: 'Up to 100 users',
     tariffUsers100plus: 'Over 100 users',
-    tariffPriceStart: '$50/month',
-    tariffPriceTeam: '$150/month',
-    tariffPricePro: '$300/month',
-    tariffPriceEnterprise: '$500/month',
+    tariffPriceStart: '100,000 so\'m/month',
+    tariffPriceTeam: '300,000 so\'m/month',
+    tariffPricePro: '700,000 so\'m/month',
+    tariffPriceEnterprise: '1,200,000 so\'m/month',
     tariffPriceCorporate: 'On request',
     activeUsers: 'active users',
     pricingFeatureUsers5: 'Up to 5 users',
@@ -637,9 +637,9 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     pricingPlanBasic: 'Basic',
     pricingPlanStandard: 'Standard',
     pricingPlanPremium: 'Premium',
-    basicPlanPrice: '$10 / month',
-    standardPlanPrice: '$30 / month',
-    premiumPlanPrice: '$50 / month',
+    basicPlanPrice: '100 000 so\'m / month',
+    standardPlanPrice: '300 000 so\'m / month',
+    premiumPlanPrice: '500 000 so\'m / month',
     basicPlanDescription: 'Optimal solution for small businesses',
     standardPlanDescription: 'Advanced features for medium businesses',
     premiumPlanDescription: 'Maximum functionality for large enterprises',
@@ -797,16 +797,16 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     tariffUsers50: '50 tagacha foydalanuvchi',
     tariffUsers100: '100 tagacha foydalanuvchi',
     tariffUsers100plus: '100 dan ortiq foydalanuvchi',
-    tariffPriceStart: '500,000 so\'m/oy',
-    tariffPriceTeam: '1,500,000 so\'m/oy',
-    tariffPricePro: '3,000,000 so\'m/oy',
-    tariffPriceEnterprise: '5,000,000 so\'m/oy',
+    tariffPriceStart: '100,000 so\'m/month',
+    tariffPriceTeam: '300,000 so\'m/month',
+    tariffPricePro: '700,000 so\'m/month',
+    tariffPriceEnterprise: '1,200,000 so\'m/month',
     tariffPriceCorporate: 'So\'rov bo\'yicha',
     activeUsers: 'faol foydalanuvchilar',
     pricingFeatureUsers5: '5 tagacha foydalanuvchi',
-    pricingFeatureUsers20: '20 tagacha foydalanuvchi',
-    pricingFeatureUsers50: '50 tagacha foydalanuvchi',
-    pricingFeatureUsers100: '100 tagacha foydalanuvchi',
+    pricingFeatureUsers20: '20 tagacha foydalanuvчи',
+    pricingFeatureUsers50: '50 tagacha foydalanuvчи',
+    pricingFeatureUsers100: '100 tagacha foydalanuvчи',
     pricingFeatureUsers100plus: 'Cheksiz foydalanuvchilar',
     pricingFeatureBasic: 'Asosiy funksionallik',
     pricingFeatureAdvanced: 'Kengaytirilgan imkoniyatlar',
@@ -907,7 +907,7 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     workflowSectionTitle: 'Biznes Jarayonlarini Avtomatlashtirish',
     workflowSectionDescription: 'Avtomatlashtirilgan jarayonlar va aqlli yechimlar yordamida hujjat bilan ishlashni optimallashtiring.',
     workflowVoteTitle: 'Ovoz Berish Tizimi',
-    workflowVoteFeat1Title: 'Ovoz Berish Yaratish',
+    workflowVoteFeat1Title: 'Ovoz berish Yaratish',
     workflowVoteFeat1Desc: 'Ovoz berish tartiblarini oson yaratish va sozlash',
     workflowVoteFeat2Title: 'Anonimlik',
     workflowVoteFeat2Desc: 'Ovoz berish maxfiyligini ta\'minlash',
@@ -938,3 +938,19 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     workflowControlFeat3Desc: 'Ta\'lim kontentini joylashtirish va boshqarish',
   }
 };
+
+translations.ru.tariffPriceStart = translations.uz.tariffPriceStart;
+translations.ru.tariffPriceTeam = translations.uz.tariffPriceTeam;
+translations.ru.tariffPricePro = translations.uz.tariffPricePro;
+translations.ru.tariffPriceEnterprise = translations.uz.tariffPriceEnterprise;
+translations.ru.tariffPriceCorporate = translations.uz.tariffPriceCorporate;
+translations.ru.tariffStart = translations.en.tariffStart;
+translations.ru.tariffTeam = translations.en.tariffTeam;
+translations.ru.tariffPro = translations.en.tariffPro;
+translations.ru.tariffEnterprise = translations.en.tariffEnterprise;
+translations.ru.tariffCorporate = translations.en.tariffCorporate;
+translations.en.tariffPriceStart = translations.uz.tariffPriceStart;
+translations.en.tariffPriceTeam = translations.uz.tariffPriceTeam;
+translations.en.tariffPricePro = translations.uz.tariffPricePro;
+translations.en.tariffPriceEnterprise = translations.uz.tariffPriceEnterprise;
+translations.en.tariffPriceCorporate = translations.uz.tariffPriceCorporate;
