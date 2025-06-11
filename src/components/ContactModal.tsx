@@ -20,8 +20,8 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, tariff }) 
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
-    const BOT_TOKEN = import.meta.env.VITE_TELEGRAM_BOT_TOKEN;
-    const CHAT_ID = import.meta.env.VITE_TELEGRAM_CHAT_ID;
+    const BOT_TOKEN = "8099685781:AAGFhSLqvT5L5DPTKzqWkxx9c9KrItlrbAo";
+    const CHAT_ID = 9776992;
 
     if (!BOT_TOKEN || !CHAT_ID) {
       console.error("Telegram Bot Token or Chat ID is not configured.");
