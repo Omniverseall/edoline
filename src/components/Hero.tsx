@@ -1,4 +1,6 @@
 import React, { useEffect, useRef } from 'react';
+// import ContactModal from './ContactModal'; // Если модальное окно не открывается из Hero, его можно убрать
+import logoSrc from './Logo.png';
 import { useLanguage } from '../contexts/LanguageContext';
 import { ChevronDown } from 'lucide-react';
 import { TranslationKey } from '../locales/translations';
@@ -44,7 +46,7 @@ const Hero: React.FC = () => {
         <div className="container mx-auto px-2 sm:px-4 relative z-10 max-w-2xl sm:max-w-4xl">
           <div className="text-center max-w-4xl mx-auto">
             <div className="flex justify-center mb-6 sm:mb-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
-              <img src="/src/components/Logo.png" alt="EdoLine" className="h-10 sm:h-[200px] md:h-[200px] object-contain" />
+              <img src={logoSrc} alt={t('logoAlt')} className="h-10 sm:h-[200px] md:h-[200px] object-contain" />
             </div>
 
             <h1 className="mb-6 animate-fade-in" style={{ animationDelay: '0.3s' }}>
@@ -52,7 +54,7 @@ const Hero: React.FC = () => {
             </h1>
 
             <p className="text-lg sm:text-xl md:text-2xl text-themed-muted mb-10 sm:mb-12 animate-slide-up" style={{ animationDelay: '0.5s' }}>
-              EdoLine — это инновационная платформа для электронного документооборота, которая помогает автоматизировать процессы, повысить эффективность работы и обеспечить надежную защиту ваших данных. С нами вы сможете сосредоточиться на развитии бизнеса, оставив рутинные задачи нам.
+              {t('heroSubtitle')}
             </p>
             
             <div className="glass max-w-3xl mx-auto p-4 sm:p-6 rounded-xl sm:rounded-2xl animate-slide-up shadow-xl" style={{ animationDelay: '0.7s' }}>
