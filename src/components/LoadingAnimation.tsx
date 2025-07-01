@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { FileText } from 'lucide-react';
+
 
 interface LoadingAnimationProps {
   onComplete: () => void;
@@ -71,7 +71,7 @@ const LoadingAnimation: React.FC<LoadingAnimationProps> = ({ onComplete }) => {
               ? 'opacity-100 transform scale-100 rotate-0' 
               : 'opacity-0 transform scale-50 rotate-180'
           }`}>
-            <FileText className="w-24 h-24 text-blue-400 drop-shadow-lg" />
+            <img src="/src/components/Logo.png" alt="EdoLine" className="w-24 h-24 drop-shadow-lg" />
           </div>
         </div>
 
