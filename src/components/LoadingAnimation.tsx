@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import favicon from '../../favicon.ico';
+import Logo2 from 'logo2.png';
 
 interface LoadingAnimationProps {
   onComplete: () => void;
@@ -70,7 +70,7 @@ const LoadingAnimation: React.FC<LoadingAnimationProps> = ({ onComplete }) => {
           }`}>
             <div className="absolute inset-0 bg-blue-500/50 rounded-full filter blur-xl animate-pulse"></div>
             <img 
-              src={favicon} 
+              src={Logo2} 
               alt="EdoLine" 
               className="relative w-20 h-20 sm:w-24 sm:h-24 drop-shadow-2xl" 
             />
