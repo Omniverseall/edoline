@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import favicon from '././favicon.ico';
+import favicon from '.././favicon.ico';
 
 interface LoadingAnimationProps {
   onComplete: () => void;
