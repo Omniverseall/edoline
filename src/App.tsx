@@ -1,5 +1,4 @@
-
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { LanguageProvider } from './contexts/LanguageContext';
 import LoadingAnimation from './components/LoadingAnimation';
@@ -15,10 +14,16 @@ import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 
 const AppContent: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(() => {
+    // Проверяем, был ли пользователь уже на сайте в этой сессии
+    const hasVisited = sessionStorage.getItem('hasVisited');
+    return !hasVisited;
+  });
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
+    // Отмечаем, что пользователь уже видел загрузочную анимацию в этой сессии
+    sessionStorage.setItem('hasVisited', 'true');
   };
 
   const handleOrderClick = () => {
