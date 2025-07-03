@@ -142,6 +142,10 @@
     animation: slideInRight 0.5s ease-out forwards;
   }
 
+  .animate-spin-slow {
+    animation: spin 8s linear infinite;
+  }
+
   /* Мобильная оптимизация - еще быстрее */
   @media (max-width: 768px) {
     .animate-fade-in {
