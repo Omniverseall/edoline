@@ -58,7 +58,7 @@
     @apply antialiased transition-colors duration-300;
     background-color: rgb(var(--color-background));
     color: rgb(var(--color-foreground));
-    overflow-x: hidden; /* Ensure no horizontal scroll */
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -112,7 +112,7 @@
     @apply rounded-xl sm:rounded-2xl glass p-4 sm:p-6 transition-all duration-300;
   }
 
-  /* Убираем hover эффекты для мобильных устройств */
+  /* Hover эффекты только для устройств с мышью */
   @media (hover: hover) {
     .card:hover {
       @apply translate-y-[-2px] shadow-xl;
@@ -129,7 +129,7 @@
     background-image: linear-gradient(to right, var(--color-gradient-text-from), var(--color-gradient-text-to));
   }
 
-  /* Оптимизированные анимации для мобильных */
+  /* Оптимизированные анимации */
   .animate-fade-in {
     animation: fadeIn 0.6s ease-out forwards;
   }
@@ -142,17 +142,16 @@
     animation: slideInRight 0.6s ease-out forwards;
   }
 
-  /* Убираем сложные анимации на мобильных */
+  .animate-float {
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulseSlow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  /* Мобильная оптимизация */
   @media (max-width: 768px) {
-    .animate-float {
-      animation: none;
-    }
-    
-    .animate-pulse-slow {
-      animation: none;
-    }
-    
-    /* Упрощаем анимации */
     .animate-fade-in {
       animation: fadeIn 0.4s ease-out forwards;
     }
@@ -164,16 +163,13 @@
     .animate-slide-in-right {
       animation: slideInRight 0.4s ease-out forwards;
     }
-  }
-
-  /* Только для десктопа */
-  @media (min-width: 769px) {
+    
     .animate-float {
       animation: float 6s ease-in-out infinite;
     }
-
+    
     .animate-pulse-slow {
-      animation: pulseSlow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      animation: pulseSlow 3s ease-in-out infinite;
     }
   }
 
@@ -217,17 +213,17 @@
 .swiper-button-next, .swiper-button-prev {
   @apply w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center text-themed-muted transition-all duration-300;
   @apply hover:bg-blue-500 hover:text-white hover:shadow-lg hover:shadow-blue-500/30;
-  background-color: rgb(var(--color-surface)); /* Более плотный фон */
-  border: 1px solid rgb(var(--color-border)); /* Четкая рамка */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Легкая тень */
+  background-color: rgb(var(--color-surface));
+  border: 1px solid rgb(var(--color-border));
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   top: 50%;
   transform: translateY(-50%);
-  z-index: 10; /* Убедимся, что они поверх */
+  z-index: 10;
 }
 
 .swiper-button-next::after, .swiper-button-prev::after {
-  font-size: 1.2rem; /* Adjust icon size */
-  color: rgb(var(--color-foreground)); /* Цвет стрелок */
+  font-size: 1.2rem;
+  color: rgb(var(--color-foreground));
 }
 
 .swiper-button-prev {
@@ -238,18 +234,17 @@
   right: 5px;
 }
 
-/* Pagination dots */
 .swiper-pagination {
-  bottom: 10px !important; /* Опускаем пагинацию */
+  bottom: 10px !important;
 }
 
 .swiper-pagination-bullet {
   @apply w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-themed-muted opacity-50 transition-all duration-300;
-  margin: 0 3px !important; /* Отступы между точками */
+  margin: 0 3px !important;
 }
 
 .swiper-pagination-bullet-active {
-  @apply opacity-100 bg-blue-500; /* Активная точка */
+  @apply opacity-100 bg-blue-500;
 }
 
   .animate-spin-slow {
@@ -257,6 +252,7 @@
   }
 }
 
+/* Keyframes */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -285,28 +281,45 @@
 }
 
 @keyframes float {
-  0% {
-    transform: translateY(0px);
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(1deg);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translateY(-20px) rotate(0deg);
   }
-  100% {
-    transform: translateY(0px);
+  75% {
+    transform: translateY(-10px) rotate(-1deg);
   }
 }
 
 @keyframes pulseSlow {
   0%, 100% {
-    opacity: 1;
+    opacity: 0.8;
+    transform: scale(1);
   }
   50% {
-    opacity: 0.7;
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
 /* Responsive utilities */
-@media (max-width: 768px) { /* md breakpoint */
+@media (max-width: 768px) {
   .section {
     @apply py-6 sm:py-8 px-2;
   }
@@ -327,7 +340,7 @@
   }
 }
 
-@media (max-width: 640px) { /* sm breakpoint */
+@media (max-width: 640px) {
   .container {
     @apply px-2;
   }
@@ -374,4 +387,9 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Дополнительные утилиты для параллакса */
+.bg-gradient-radial {
+  background: radial-gradient(var(--tw-gradient-stops));
 }

@@ -12,13 +12,13 @@ const LoadingAnimation: React.FC<LoadingAnimationProps> = ({ onComplete }) => {
   const [showLetters, setShowLetters] = useState<boolean[]>(Array(letters.length).fill(false));
 
   // Ускоренные тайминги
-  const firstLetterAppearTime = 800; // Было 1500
-  const letterStaggerTime = 60; // Было 100
+  const firstLetterAppearTime = 600;
+  const letterStaggerTime = 50;
 
   useEffect(() => {
     const iconTimer = setTimeout(() => {
       setShowIcon(true);
-    }, 300); // Было 500
+    }, 200);
 
     const letterTimers = letters.map((_, index) =>
       setTimeout(() => {
@@ -30,16 +30,12 @@ const LoadingAnimation: React.FC<LoadingAnimationProps> = ({ onComplete }) => {
       }, firstLetterAppearTime + index * letterStaggerTime)
     );
 
-    // Ускоренный расчет времени завершения
-    // Последняя буква 'e' (index 6): 800ms + 6 * 60ms = 1160ms
-    // Анимация буквы: 1160ms + 400ms = 1560ms
-    // Подзаголовок: 1160ms + 600ms = 1760ms
-    // Точки: 1160ms + 800ms = 1960ms
-    const completeTimerDelay = 1960 + 200; // 2160ms (было 4900ms)
+    // Быстрое завершение: 600ms + 6 * 50ms + 800ms = 1700ms
+    const completeTimerDelay = 1700;
 
     const completeTimer = setTimeout(() => {
       setIsVisible(false);
-      setTimeout(onComplete, 300); // Было 500
+      setTimeout(onComplete, 200);
     }, completeTimerDelay);
 
     return () => {
@@ -50,19 +46,19 @@ const LoadingAnimation: React.FC<LoadingAnimationProps> = ({ onComplete }) => {
   }, [onComplete, letters.length, firstLetterAppearTime, letterStaggerTime]);
 
   return (
-    <div className={`fixed inset-0 z-50 flex items-center justify-center transition-all duration-300 ${
+    <div className={`fixed inset-0 z-50 flex items-center justify-center transition-all duration-200 ${
       isVisible ? 'opacity-100' : 'opacity-0 pointer-events-none'
     }`}>
       <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900"></div>
       
       <div className="relative z-10 text-center">
-        <div className="mb-8 flex justify-center">
-          <div className={`transition-all duration-600 ease-out ${
+        <div className="mb-6 flex justify-center">
+          <div className={`transition-all duration-500 ease-out ${
             showIcon 
               ? 'opacity-100 transform scale-100 rotate-0' 
               : 'opacity-0 transform scale-50 rotate-180'
           }`}>
-            <img src={favicon} alt="EdoLine" className="w-20 h-20 sm:w-24 sm:h-24 drop-shadow-lg" />
+            <img src={favicon} alt="EdoLine" className="w-16 h-16 sm:w-20 sm:h-20 drop-shadow-lg" />
           </div>
         </div>
 
@@ -70,10 +66,10 @@ const LoadingAnimation: React.FC<LoadingAnimationProps> = ({ onComplete }) => {
           {letters.map((letter, index) => (
             <div
               key={index}
-              className={`text-4xl sm:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-400 ease-out ${
+              className={`text-3xl sm:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 ease-out ${
                 showLetters[index]
                   ? 'opacity-100 transform translate-y-0'
-                  : 'opacity-0 transform translate-y-8'
+                  : 'opacity-0 transform translate-y-6'
               }`}
             >
               {letter}
@@ -81,24 +77,24 @@ const LoadingAnimation: React.FC<LoadingAnimationProps> = ({ onComplete }) => {
           ))}
         </div>
 
-        <div className={`mt-4 sm:mt-6 transition-all duration-600 ease-out delay-600 ${
+        <div className={`mt-4 transition-all duration-400 ease-out delay-300 ${
           showLetters[6] 
             ? 'opacity-100 transform translate-y-0' 
             : 'opacity-0 transform translate-y-4'
         }`}>
-          <p className="text-white/70 text-base sm:text-lg tracking-wider uppercase">
-            Document Management System
+          <p className="text-white/70 text-sm sm:text-base tracking-wider">
+            Платформа электронного документооборота
           </p>
         </div>
 
-        <div className={`flex justify-center mt-6 sm:mt-8 space-x-2 transition-all duration-600 ease-out delay-800 ${
+        <div className={`flex justify-center mt-4 space-x-1 transition-all duration-400 ease-out delay-500 ${
           showLetters[6] 
             ? 'opacity-100 transform translate-y-0' 
             : 'opacity-0 transform translate-y-4'
         }`}>
-          <div className="w-2 h-2 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0s' }}></div>
-          <div className="w-2 h-2 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-          <div className="w-2 h-2 bg-cyan-400 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
+          <div className="w-1.5 h-1.5 bg-blue-400 rounded-full animate-bounce" style={{ animationDelay: '0s' }}></div>
+          <div className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+          <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
         </div>
       </div>
     </div>
