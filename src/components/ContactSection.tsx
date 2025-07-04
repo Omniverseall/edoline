@@ -49,7 +49,7 @@ const ContactSection: React.FC = () => {
                   <div className="w-8 h-8 sm:w-10 sm:h-10 glass flex items-center justify-center rounded-full flex-shrink-0">
                     <Phone className="text-blue-400 w-4 h-4 sm:w-5 sm:h-5"/>
                   </div>
-                  <span className="text-themed-foreground text-sm sm:text-base">{t('contactPhone')}</span>
+                  <span className="text-themed-foreground text-sm sm:text-base">+998770485151</span>
                 </div>
 
                 <div className="flex items-center space-x-3">
