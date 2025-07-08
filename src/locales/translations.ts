@@ -439,6 +439,7 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     workflowVoteFeat2Title: 'Голосование',
     workflowVoteFeat2Desc: 'Подтверждение голосования с ЭЦП E-IMZO',
     workflowVoteFeat3Title: 'Результаты в реальном времени',
+    workflowVoteFeat3Desc: 'Результаты в реальном времени',
     workflowDynDocTitle: 'Динамические документы',
     workflowDynDocFeat1Title: 'Адаптивные формы',
     workflowDynDocFeat1Desc: 'Документы, изменяющиеся в зависимости от контекста',
@@ -462,6 +463,9 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     workflowControlFeat2Desc: 'Централизованное хранение информации',
     workflowControlFeat3Title: 'Учебные материалы',
     workflowControlFeat3Desc: 'Размещение и управление образовательным контентом',
+    footerRights: 'Все права защищены',
+    footerPrivacy: 'Политика конфиденциальности',
+    footerTerms: 'Условия использования',
   },
   en: {
     logoAlt: 'Document Management System Logo',
@@ -670,7 +674,6 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     workflowVoteFeat2Title: 'Anonymity',
     workflowVoteFeat2Desc: 'Ensuring voting confidentiality',
     workflowVoteFeat3Title: 'Real-time Results',
-    workflowVoteFeat3Desc: 'Instant processing and display of results',
     workflowDynDocTitle: 'Dynamic Documents',
     workflowDynDocFeat1Title: 'Adaptive Forms',
     workflowDynDocFeat1Desc: 'Documents that change depending on context',
@@ -694,6 +697,10 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     workflowControlFeat2Desc: 'Each signed and published document has a protective access code for viewing',
     workflowControlFeat3Title: 'Dynamism',
     workflowControlFeat3Desc: 'Changing the access code of each document and providing one-time access',
+    workflowVoteFeat3Desc: 'Instant processing and display of results',
+    footerRights: 'All rights reserved',
+    footerPrivacy: 'Privacy Policy',
+    footerTerms: 'Terms of Use',
   },
   uz: {
     logoAlt: 'Hujjatlarni boshqarish tizimi logotipi',
@@ -796,7 +803,7 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     tariffPriceEnterprise: '1,200,000 so\'m/month',
     tariffPriceCorporate: 'So\'rov bo\'yicha',
     activeUsers: 'faol foydalanuvchilar',
-    pricingFeatureUsers5: '5 tagacha foydalanuvchi',
+    pricingFeatureUsers5: '5 tagacha foydalanuvчи',
     pricingFeatureUsers20: '20 tagacha foydalanuvчи',
     pricingFeatureUsers50: '50 tagacha foydalanuvчи',
     pricingFeatureUsers100: '100 tagacha foydalanuvчи',
@@ -902,7 +909,6 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     workflowVoteFeat2Title: 'Ovoz berish',
     workflowVoteFeat2Desc: 'E-IMZO ERI bilan ovoz berishni tasdiqlash',
     workflowVoteFeat3Title: 'Haqiqiy Vaqtda Natijalar',
-    workflowVoteFeat3Desc: 'Natijalarni tezkor qayta ishlash va aks ettirish',
     workflowDynDocTitle: 'Dinamik Hujjatlar',
     workflowDynDocFeat1Title: 'Moslashuvchan Formalar',
     workflowDynDocFeat1Desc: 'Kontekstga qarab o\'zgaruvchan hujjatlar',
@@ -926,6 +932,10 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     workflowControlFeat2Desc: 'Har bir imzolangan va nashr qilingan hujjat ko\'rish uchun himoya kodiga ega',
     workflowControlFeat3Title: 'Dinamiklik',
     workflowControlFeat3Desc: 'Har bir hujjatning kirish kodini o\'zgartirish va bir martalik kirish berish',
+    workflowVoteFeat3Desc: 'Natijalarni tezkor qayta ishlash va aks ettirish',
+    footerRights: 'Barcha huquqlar himoyalangan',
+    footerPrivacy: 'Maxfiylik siyosati',
+    footerTerms: 'Foydalanish shartlari',
   }
 };
 
@@ -944,3 +954,4 @@ translations.en.tariffPriceTeam = translations.uz.tariffPriceTeam;
 translations.en.tariffPricePro = translations.uz.tariffPricePro;
 translations.en.tariffPriceEnterprise = translations.uz.tariffPriceEnterprise;
 translations.en.tariffPriceCorporate = translations.uz.tariffPriceCorporate;
+

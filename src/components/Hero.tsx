@@ -16,13 +16,8 @@ const Hero: React.FC = () => {
   return (
     <>
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-12 sm:pt-24 md:pt-28">
-        {/* Простой статичный фон */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900"></div>
-        
-        {/* Сетка */}
         <div className="absolute inset-0 -z-10 bg-grid-pattern opacity-20 dark:opacity-10"></div>
         
-        {/* Простые статичные декоративные элементы */}
         <div className="absolute top-[20%] right-[10%] w-32 h-32 bg-blue-500/10 rounded-full filter blur-3xl"></div>
         <div className="absolute top-[70%] left-[15%] w-24 h-24 bg-violet-500/10 rounded-full filter blur-2xl"></div>
         <div className="absolute top-[40%] left-[80%] w-20 h-20 bg-purple-500/10 rounded-full filter blur-2xl"></div>

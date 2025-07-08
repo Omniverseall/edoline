@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { LanguageProvider } from './contexts/LanguageContext';
 import LoadingAnimation from './components/LoadingAnimation';
@@ -48,8 +48,8 @@ const AppContent: React.FC = () => {
         titleKey="votingTitle"
         subtitleKey="votingSubtitle"
         descriptionKey="votingDescription"
-        image="https://images.pexels.com/photos/3184338/pexels-photo-3184338.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750"
-        imageAlt="Команда обсуждает документы"
+        image="https://img.freepik.com/premium-photo/frustrated-business-people-sitting-table-office_252847-191.jpg"
+        imageAlt="Рабочие группы и комитеты"
         featureKeys={["transparentPath","mobileVoting","speedUp","notifications"]}
         direction="right"
         gradient="from-blue-500/20 to-violet-500/20"
@@ -61,8 +61,8 @@ const AppContent: React.FC = () => {
         titleKey="adaptationTitle"
         subtitleKey="adaptationSubtitle"
         descriptionKey="adaptationDescription"
-        image="https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750"
-        imageAlt="Настройка системы"
+        image="https://media.istockphoto.com/id/1490859962/photo/power-soft-skills-multi-skills-responsibility-hr-human-resources-concept-personal-attribute.jpg?s=612x612&w=0&k=20&c=ToS6Yl5eZgQUc0t9FWp7tHkabQvoEe0ge1PFbPYvf7A="
+        imageAlt="Адаптация под ваши нужды"
         featureKeys={["customization","documentTypes","training","support"]}
         direction="left"
         gradient="from-violet-500/20 to-pink-500/20"
