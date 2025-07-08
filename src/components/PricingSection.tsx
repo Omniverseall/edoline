@@ -12,7 +12,7 @@ interface Tariff {
   nameKey: TranslationKey;
   usersKey: TranslationKey;
   priceKey: TranslationKey;
-  features: string[];
+  features: TranslationKey[];
 }
 
 const tariffs: Tariff[] = [
@@ -26,7 +26,7 @@ const tariffs: Tariff[] = [
     nameKey: 'tariffTeam',
     usersKey: 'tariffUsers20',
     priceKey: 'tariffPriceTeam',
-    features: ['pricingFeatureUsers20', 'pricingFeatureAdvanced', 'pricingFeaturePrioritySupport'],
+    features: ['pricingFeatureUsers20', 'pricingFeatureAdvanced', 'pricingFeaturePrioritySupport', 'pricingFeatureCustom'],
   },
   {
     nameKey: 'tariffPro',
@@ -44,7 +44,7 @@ const tariffs: Tariff[] = [
     nameKey: 'tariffCorporate',
     usersKey: 'tariffUsers100plus',
     priceKey: 'tariffPriceCorporate',
-    features: ['pricingFeatureUsers100plus', 'pricingFeatureCustom', 'pricingFeatureVipSupport'],
+    features: ['pricingFeatureUsers100plus', 'pricingFeatureCustom', 'pricingFeatureVipSupport', 'pricingFeatureAll'],
   },
 ];
 
@@ -74,21 +74,24 @@ const PricingSection: React.FC<PricingSectionProps> = ({ onOrderClick }) => {
             pagination={{ clickable: true }}
             navigation={true}
             modules={[Navigation, Pagination]}
-            className="mySwiper"
+            className="mySwiper pb-10"
           >
             {tariffs.map((tariff) => (
-              <SwiperSlide key={tariff.nameKey}>
-                <div className="tariff-card bg-white dark:bg-themed-surface rounded-2xl shadow-lg p-8 flex flex-col items-center text-center min-w-[320px] max-w-[350px] mx-auto">
+              <SwiperSlide key={tariff.nameKey} className="h-auto">
+                <div className="h-full tariff-card bg-white dark:bg-themed-surface rounded-2xl shadow-lg p-8 flex flex-col items-center text-center w-full max-w-[350px] mx-auto">
                   <div className="text-lg font-semibold text-blue-600 mb-2">{t(tariff.nameKey)}</div>
                   <div className="text-3xl font-bold mb-2 text-themed-foreground">{t(tariff.priceKey)}</div>
                   <div className="text-themed-muted mb-4">{t(tariff.usersKey)} {t('activeUsers')}</div>
-                  <ul className="mb-6 space-y-1 text-themed-muted text-sm">
-                    {tariff.features.map((f, i) => (
-                      <li key={i}>{t(f as TranslationKey)}</li>
+                  <ul className="flex-grow mb-6 space-y-2 text-themed-muted text-sm">
+                    {tariff.features.map((featureKey, i) => (
+                      <li key={i} className="flex items-center justify-center gap-2">
+                        <span className="text-blue-500">✓</span>
+                        <span>{t(featureKey)}</span>
+                      </li>
                     ))}
                   </ul>
                   <button
-                    className="w-full btn btn-primary transition-all duration-300"
+                    className="w-full btn btn-primary transition-all duration-300 mt-auto"
                     onClick={onOrderClick}
                   >
                     {t('pricingOrderBtn')}

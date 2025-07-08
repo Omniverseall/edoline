@@ -327,10 +327,10 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     tariffUsers50: 'До 50 пользователей',
     tariffUsers100: 'До 100 пользователей',
     tariffUsers100plus: 'Свыше 100 пользователей',
-    tariffPriceStart: '100,000 so\'m/month',
-    tariffPriceTeam: '300,000 so\'m/month',
-    tariffPricePro: '700,000 so\'m/month',
-    tariffPriceEnterprise: '1,200,000 so\'m/month',
+    tariffPriceStart: '100,000 сум/мес',
+    tariffPriceTeam: '300,000 сум/мес',
+    tariffPricePro: '700,000 сум/мес',
+    tariffPriceEnterprise: '1,200,000 сум/мес',
     tariffPriceCorporate: 'По запросу',
     activeUsers: 'активных пользователей',
     pricingFeatureUsers5: 'До 5 пользователей',
@@ -797,16 +797,16 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     tariffUsers50: '50 tagacha foydalanuvchi',
     tariffUsers100: '100 tagacha foydalanuvchi',
     tariffUsers100plus: '100 dan ortiq foydalanuvchi',
-    tariffPriceStart: '100,000 so\'m/month',
-    tariffPriceTeam: '300,000 so\'m/month',
-    tariffPricePro: '700,000 so\'m/month',
-    tariffPriceEnterprise: '1,200,000 so\'m/month',
+    tariffPriceStart: '100,000 so\'m/oyiga',
+    tariffPriceTeam: '300,000 so\'m/oyiga',
+    tariffPricePro: '700,000 so\'m/oyiga',
+    tariffPriceEnterprise: '1,200,000 so\'m/oyiga',
     tariffPriceCorporate: 'So\'rov bo\'yicha',
     activeUsers: 'faol foydalanuvchilar',
-    pricingFeatureUsers5: '5 tagacha foydalanuvчи',
-    pricingFeatureUsers20: '20 tagacha foydalanuvчи',
-    pricingFeatureUsers50: '50 tagacha foydalanuvчи',
-    pricingFeatureUsers100: '100 tagacha foydalanuvчи',
+    pricingFeatureUsers5: '5 tagacha foydalanuvchi',
+    pricingFeatureUsers20: '20 tagacha foydalanuvchi',
+    pricingFeatureUsers50: '50 tagacha foydalanuvchi',
+    pricingFeatureUsers100: '100 tagacha foydalanuvchi',
     pricingFeatureUsers100plus: 'Cheksiz foydalanuvchilar',
     pricingFeatureBasic: 'Asosiy funksionallik',
     pricingFeatureAdvanced: 'Kengaytirilgan imkoniyatlar',
@@ -938,20 +938,3 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     footerTerms: 'Foydalanish shartlari',
   }
 };
-
-translations.ru.tariffPriceStart = translations.uz.tariffPriceStart;
-translations.ru.tariffPriceTeam = translations.uz.tariffPriceTeam;
-translations.ru.tariffPricePro = translations.uz.tariffPricePro;
-translations.ru.tariffPriceEnterprise = translations.uz.tariffPriceEnterprise;
-translations.ru.tariffPriceCorporate = translations.uz.tariffPriceCorporate;
-translations.ru.tariffStart = translations.en.tariffStart;
-translations.ru.tariffTeam = translations.en.tariffTeam;
-translations.ru.tariffPro = translations.en.tariffPro;
-translations.ru.tariffEnterprise = translations.en.tariffEnterprise;
-translations.ru.tariffCorporate = translations.en.tariffCorporate;
-translations.en.tariffPriceStart = translations.uz.tariffPriceStart;
-translations.en.tariffPriceTeam = translations.uz.tariffPriceTeam;
-translations.en.tariffPricePro = translations.uz.tariffPricePro;
-translations.en.tariffPriceEnterprise = translations.uz.tariffPriceEnterprise;
-translations.en.tariffPriceCorporate = translations.uz.tariffPriceCorporate;
-
