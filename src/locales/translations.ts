@@ -686,13 +686,6 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     workflowHRFeat3Desc: 'Conducting certifications and performance evaluations',
     workflowHRFeat4Title: 'HR Document Flow',
     workflowHRFeat4Desc: 'Management of personnel documentation',
-    workflowControlTitle: 'Knowledge Control',
-    workflowControlFeat1Title: 'Testing',
-    workflowControlFeat1Desc: 'System for conducting tests and exams',
-    workflowControlFeat2Title: 'Knowledge Base',
-    workflowControlFeat2Desc: 'Centralized information storage',
-    workflowControlFeat3Title: 'Training Materials',
-    workflowControlFeat3Desc: 'Placement and management of educational content',
   },
   uz: {
     logoAlt: 'Hujjatlarni boshqarish tizimi logotipi',
