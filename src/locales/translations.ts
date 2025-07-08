@@ -395,9 +395,6 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     electronicSignature: 'Электронная подпись',
     hrDocuments: 'HR-документы',
     knowledgeBase: 'База знаний',
-    footerRights: 'Все права защищены',
-    footerPrivacy: 'Политика конфиденциальности',
-    footerTerms: 'Условия использования',
     // Plans
     pricingPlanBasic: 'Базовый',
     pricingPlanStandard: 'Стандартный',
@@ -629,9 +626,6 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     electronicSignature: 'Electronic Signature',
     hrDocuments: 'HR Documents',
     knowledgeBase: 'Knowledge Base',
-    footerRights: 'All rights reserved',
-    footerPrivacy: 'Privacy Policy',
-    footerTerms: 'Terms of use',
     // Plans
     pricingPlanBasic: 'Basic',
     pricingPlanStandard: 'Standard',
@@ -864,9 +858,6 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     electronicSignature: 'Elektron imzo',
     hrDocuments: 'HR hujjatlar',
     knowledgeBase: 'Bilimlar bazasi',
-    footerRights: 'Barcha huquqlar himoyalangan',
-    footerPrivacy: 'Maxfiylik siyosati',
-    footerTerms: 'Foydalanish shartlari',
     // Plans
     pricingPlanBasic: 'Asosiy',
     pricingPlanStandard: 'Standart',

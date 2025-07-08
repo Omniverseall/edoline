@@ -45,9 +45,12 @@ const Footer: React.FC = () => {
             <ul className="space-y-2 sm:space-y-3">
               {navLinks.map((item) => (
                 <li key={item.key}>
-                  <span className="text-themed-muted text-sm sm:text-base">
+                  <a 
+                    href={`#${item.key === 'home' ? '' : item.key === 'features' ? 'features-section' : item.key === 'solutions' ? 'solutions-section' : item.key === 'processes' ? 'processes-section' : item.key === 'security' ? 'security-section' : item.key === 'pricing' ? 'pricing-section' : item.key === 'contacts' ? 'contact-section' : item.key}`}`}
+                    className="text-themed-muted hover:text-blue-500 dark:hover:text-blue-400 transition-colors text-sm sm:text-base"
+                  >
                     {t(item.key)}
-                  </span>
+                  </a>
                 </li>
               ))}
             </ul>
