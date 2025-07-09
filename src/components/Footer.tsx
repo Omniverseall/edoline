@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="md:mx-auto">
-            <h4 className="font-bold text-white mb-4">Навигация</h4>
+            <h4 className="font-bold text-white mb-4">{t('navigation')}</h4>
             <ul className="space-y-2">
               {navLinks.map(link => (
                 <li key={link.key}>
@@ -45,11 +45,11 @@ const Footer: React.FC = () => {
           </div>
 
           <div className="md:mx-auto">
-            <h4 className="font-bold text-white mb-4">Контакты</h4>
+            <h4 className="font-bold text-white mb-4">{t('contacts')}</h4>
             <ul className="space-y-2 text-slate-400 text-sm">
               <li><a href="mailto:info@edoline.uz" className="hover:text-blue-400 transition-colors">info@edoline.uz</a></li>
               <li><a href="tel:+998770485151" className="hover:text-blue-400 transition-colors">+998 77 048 51 51</a></li>
-              <li>Tashkent, Uzbekistan</li>
+              <li>Ташкент, 9-й проезд, ул. А. Каххара, д.1А</li>
             </ul>
           </div>
           

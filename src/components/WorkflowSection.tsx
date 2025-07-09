@@ -32,6 +32,7 @@ const WorkflowSection: React.FC = () => {
     { titleKey: 'workflowControlFeat1Title', descKey: 'workflowControlFeat1Desc' },
     { titleKey: 'workflowControlFeat2Title', descKey: 'workflowControlFeat2Desc' },
     { titleKey: 'workflowControlFeat3Title', descKey: 'workflowControlFeat3Desc' },
+    { titleKey: 'workflowControlFeat4Title', descKey: 'workflowControlFeat4Desc' },
   ];
 
   return (

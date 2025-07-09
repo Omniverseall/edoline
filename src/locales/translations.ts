@@ -227,7 +227,9 @@ export type TranslationKey =
   | 'workflowControlFeat2Title'
   | 'workflowControlFeat2Desc'
   | 'workflowControlFeat3Title'
-  | 'workflowControlFeat3Desc';
+  | 'workflowControlFeat3Desc'
+  | 'workflowControlFeat4Title'
+  | 'workflowControlFeat4Desc';
 
 export type Language = 'ru' | 'en' | 'uz';
 
@@ -456,13 +458,15 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     workflowHRFeat3Desc: 'Проведение аттестаций и оценок эффективности',
     workflowHRFeat4Title: 'Документооборот HR',
     workflowHRFeat4Desc: 'Управление кадровой документацией',
-    workflowControlTitle: 'Контроль знаний',
-    workflowControlFeat1Title: 'Тестирование',
-    workflowControlFeat1Desc: 'Система проведения тестов и экзаменов',
-    workflowControlFeat2Title: 'База знаний',
-    workflowControlFeat2Desc: 'Централизованное хранение информации',
-    workflowControlFeat3Title: 'Учебные материалы',
-    workflowControlFeat3Desc: 'Размещение и управление образовательным контентом',
+    workflowControlTitle: 'База знаний',
+    workflowControlFeat1Title: 'Публикация документов',
+    workflowControlFeat1Desc: 'Возможность публикации документов внутри и вне организации',
+    workflowControlFeat2Title: 'Защита документа',
+    workflowControlFeat2Desc: 'Каждый подписанный и опубликованный документ имеет защитный код доступа для просмотра',
+    workflowControlFeat3Title: 'Динамичность',
+    workflowControlFeat3Desc: 'Смена кода доступа каждого документа и предоставление одноразового доступа',
+    workflowControlFeat4Title: 'Дополнительная функция',
+    workflowControlFeat4Desc: 'Описание дополнительной функции',
     footerRights: 'Все права защищены',
     footerPrivacy: 'Политика конфиденциальности',
     footerTerms: 'Условия использования',
@@ -697,6 +701,8 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     workflowControlFeat2Desc: 'Each signed and published document has a protective access code for viewing',
     workflowControlFeat3Title: 'Dynamism',
     workflowControlFeat3Desc: 'Changing the access code of each document and providing one-time access',
+    workflowControlFeat4Title: 'Additional Feature',
+    workflowControlFeat4Desc: 'Description of the additional feature',
     workflowVoteFeat3Desc: 'Instant processing and display of results',
     footerRights: 'All rights reserved',
     footerPrivacy: 'Privacy Policy',
@@ -932,6 +938,8 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     workflowControlFeat2Desc: 'Har bir imzolangan va nashr qilingan hujjat ko\'rish uchun himoya kodiga ega',
     workflowControlFeat3Title: 'Dinamiklik',
     workflowControlFeat3Desc: 'Har bir hujjatning kirish kodini o\'zgartirish va bir martalik kirish berish',
+    workflowControlFeat4Title: 'Qo‘shimcha funksiya',
+    workflowControlFeat4Desc: 'Qo‘shimcha funksiyaning tavsifi',
     workflowVoteFeat3Desc: 'Natijalarni tezkor qayta ishlash va aks ettirish',
     footerRights: 'Barcha huquqlar himoyalangan',
     footerPrivacy: 'Maxfiylik siyosati',
