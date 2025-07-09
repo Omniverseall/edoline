@@ -72,7 +72,7 @@ const ElectronicSignature: React.FC = () => {
           </div>
           
           <div className={`glass rounded-2xl p-4 sm:p-6 overflow-hidden ${isInView ? 'animate-slide-in-right' : 'opacity-0'}`}>
-            <div className="tabs flex mb-6 space-x-1 bg-slate-900/50 dark:bg-slate-800/70 light:bg-slate-200/70 p-1 rounded-lg">
+            <div className="tabs flex mb-6 space-x-1  bg-slate-100/50 dark:bg-slate-100/70 light:bg-white p-1 rounded-lg">
               {tabs.map((tab, index) => (
                 <button
                   key={index}
@@ -84,7 +84,7 @@ const ElectronicSignature: React.FC = () => {
               ))}
             </div>
             
-            <div className="signature-demo p-4 bg-slate-900/50 dark:bg-slate-800/70 light:bg-slate-100 rounded-xl min-h-[250px] sm:min-h-[300px] flex items-center justify-center">
+            <div className="signature-demo p-4 bg-slate-100/50 dark:bg-slate-100/70 light:bg-white rounded-xl min-h-[250px] sm:min-h-[300px] flex items-center justify-center">
               {tabs.map((tab, index) => activeTab === index && (
                 <div key={tab.key} className="text-center animate-fade-in">
                   <div className={`w-16 h-16 mx-auto mb-4 rounded-full ${index === 0 ? 'bg-blue-500/20' : index === 1 ? 'bg-green-500/20' : 'bg-amber-500/20'} flex items-center justify-center`}>

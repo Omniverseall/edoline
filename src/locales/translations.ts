@@ -53,6 +53,7 @@ export type TranslationKey =
   | 'footerRights'
   | 'footerPrivacy'
   | 'footerTerms'
+  | 'footerperevod'
   | 'pricingPlanBasic'
   | 'pricingPlanStandard'
   | 'pricingPlanPremium'
@@ -470,6 +471,7 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     footerRights: 'Все права защищены',
     footerPrivacy: 'Политика конфиденциальности',
     footerTerms: 'Условия использования',
+    footerperevod: 'Ташкент, 9-й проезд, ул. А. Каххара, д.1А'
   },
   en: {
     logoAlt: 'Document Management System Logo',
@@ -707,6 +709,7 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     footerRights: 'All rights reserved',
     footerPrivacy: 'Privacy Policy',
     footerTerms: 'Terms of Use',
+    footerperevod: 'Tashkent, 9th Passage, A. Qahhor Street, Building 1A'
   },
   uz: {
     logoAlt: 'Hujjatlarni boshqarish tizimi logotipi',
@@ -905,6 +908,7 @@ export const translations: Record<Language, Record<TranslationKey, string>> = {
     securityBenefitComplianceDesc: 'Xavfsizlik talablariga javob berish',
     securityBenefitAdminTitle: 'Boshqaruv',
     securityBenefitAdminDesc: 'Markazlashtirilgan tizim boshqaruvi',
+    footerperevod: 'Toshkent, 9-proyezd, A. Qahhor ko‘chasi, 1A-uy',
     // Workflow Section
     workflowSectionSubtitle: 'Ish Jarayonlari',
     workflowSectionTitle: 'Biznes Jarayonlarini Avtomatlashtirish',

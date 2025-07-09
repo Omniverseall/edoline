@@ -102,10 +102,13 @@ const WorkflowSection: React.FC = () => {
               <h3 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-4 text-themed-foreground">{t('workflowHRTitle')}</h3>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {hrWorkflowItems.map((item) => (
+            <div className="space-y-4 sm:space-y-6">
+              {hrWorkflowItems.map((item, index) => (
                 <div key={item.titleKey} className="glass p-4 rounded-xl hover:bg-white/5 dark:hover:bg-black/5 light:hover:bg-slate-100/70 transition-all">
-                  <h4 className="font-semibold mb-2 text-themed-foreground">{t(item.titleKey)}</h4>
+                  <h4 className="font-semibold mb-2 flex items-center text-themed-foreground">
+                    <span className="w-6 h-6 rounded-full bg-teal-500 flex items-center justify-center mr-2 text-xs text-white">{index + 1}</span>
+                    {t(item.titleKey)}
+                  </h4>
                   <p className="text-themed-muted text-sm">{t(item.descKey)}</p>
                 </div>
               ))}

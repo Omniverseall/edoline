@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-2 text-slate-400 text-sm">
               <li><a href="mailto:info@edoline.uz" className="hover:text-blue-400 transition-colors">info@edoline.uz</a></li>
               <li><a href="tel:+998770485151" className="hover:text-blue-400 transition-colors">+998 77 048 51 51</a></li>
-              <li>Ташкент, 9-й проезд, ул. А. Каххара, д.1А</li>
+              <li>{t('footerperevod')}</li>
             </ul>
           </div>
           
